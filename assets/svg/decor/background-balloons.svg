@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 270" role="img" aria-label="Globos de papel azul y verde salvia">
+  <defs>
+    <linearGradient id="balloonBlue" x1="66" y1="8" x2="155" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#cde6f1"/>
+      <stop offset="1" stop-color="#5f91b1"/>
+    </linearGradient>
+    <linearGradient id="balloonSage" x1="16" y1="40" x2="106" y2="158" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d7e7d9"/>
+      <stop offset="1" stop-color="#8cae99"/>
+    </linearGradient>
+    <linearGradient id="balloonNavy" x1="88" y1="52" x2="174" y2="177" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#86b8d2"/>
+      <stop offset="1" stop-color="#31546e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="7" flood-color="#31546e" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M64 71c0-37 23-63 52-63s52 26 52 63-23 69-52 69-52-32-52-69z" fill="url(#balloonBlue)"/>
+    <path d="M17 101c0-32 19-57 44-57s44 25 44 57-19 60-44 60-44-28-44-60z" fill="url(#balloonSage)"/>
+    <path d="M94 112c0-30 18-54 41-54s41 24 41 54-18 57-41 57-41-27-41-57z" fill="url(#balloonNavy)" opacity="0.96"/>
+    <path d="M117 29c17 9 27 28 25 55" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+    <path d="M61 60c13 8 20 24 18 42" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.50"/>
+    <path d="M136 77c12 9 18 24 16 42" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+    <path d="M115 140l-8 12h18zM61 161l-8 12h17zM135 169l-8 12h17z" fill="#7d6149" opacity="0.46"/>
+    <path d="M116 151c-12 24-34 42-21 107M62 173c20 18 34 41 22 84M136 180c-17 18-26 40-17 78" fill="none" stroke="#7d6149" stroke-width="2" stroke-linecap="round" opacity="0.48"/>
+    <path d="M86 235c12 10 25 10 35 0" fill="none" stroke="#7d6149" stroke-width="2" stroke-linecap="round" opacity="0.34"/>
+  </g>
+</svg>

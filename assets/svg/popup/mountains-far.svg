@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" preserveAspectRatio="xMidYEnd meet" role="img">
+  <defs>
+    <style>
+      #far-back-ridge{animation:farBackDrift 15s ease-in-out infinite;transform-origin:300px 218px}
+      #far-main-ridge{animation:farRidgeBreath 12s ease-in-out infinite;transform-origin:300px 218px}
+      .far-facet-light{animation:farFacetGlow 8.4s ease-in-out infinite;animation-delay:var(--d,0s)}
+      .far-glint{animation:farGlint 6.8s ease-in-out infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center}
+      .far-fold{stroke-dasharray:5 7;animation:farFoldTrace 18s linear infinite}
+      .far-fog{animation:farFog 14s ease-in-out infinite}
+      @keyframes farBackDrift{0%,100%{transform:translateX(-2px) scale(1)}50%{transform:translateX(3px) scale(1.006)}}
+      @keyframes farRidgeBreath{0%,100%{transform:skewX(0deg) translateY(0)}45%{transform:skewX(.45deg) translateY(-1.6px)}70%{transform:skewX(-.25deg) translateY(.4px)}}
+      @keyframes farFacetGlow{0%,100%{opacity:.26}45%{opacity:.72}68%{opacity:.42}}
+      @keyframes farGlint{0%,55%,100%{opacity:0;transform:scale(.72) rotate(0deg)}64%{opacity:.72;transform:scale(1.08) rotate(6deg)}76%{opacity:.18;transform:scale(.9) rotate(-4deg)}}
+      @keyframes farFoldTrace{to{stroke-dashoffset:-72}}
+      @keyframes farFog{0%,100%{transform:translateX(-7px);opacity:.36}50%{transform:translateX(9px);opacity:.58}}
+      @media (prefers-reduced-motion:reduce){
+        #far-back-ridge,#far-main-ridge,.far-facet-light,.far-glint,.far-fold,.far-fog{animation:none!important}
+      }
+    </style>
+    <filter id="farSh" x="-6%" y="-14%" width="112%" height="128%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#3a5870" flood-opacity=".16"/>
+    </filter>
+    <linearGradient id="farBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7898b5"/>
+      <stop offset="1" stop-color="#5a7895"/>
+    </linearGradient>
+    <linearGradient id="farMist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8eaf8" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#d8eaf8" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="iceTex" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M2,3h1M8,2h1M13,5h1M5,11h1M11,13h1" stroke="#9ab8cc" stroke-width=".5" opacity=".28"/>
+      <path d="M1,14h1M9,7h1" stroke="#fff" stroke-width=".4" opacity=".35"/>
+    </pattern>
+    <linearGradient id="farRidgeSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b8d4e8" stop-opacity=".58"/>
+      <stop offset=".55" stop-color="#7fa4c0" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#476a8e" stop-opacity=".28"/>
+    </linearGradient>
+    <linearGradient id="farFoldHi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#d8eaf8" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+
+  <g id="far-back-ridge" opacity=".62" stroke="#6f8da8" stroke-width=".55" stroke-linejoin="round">
+    <polygon points="-25,160 28,112 80,152 128,92 194,158 252,78 318,154 370,92 438,154 492,105 548,156 625,120 625,219 -25,219" fill="url(#farRidgeSoft)"/>
+    <polygon points="28,112 80,152 42,166" fill="#9bb8cc" opacity=".62"/>
+    <polygon points="128,92 194,158 152,170" fill="#86a8c2" opacity=".52"/>
+    <polygon points="252,78 318,154 278,174" fill="#789bb8" opacity=".48"/>
+    <polygon points="370,92 438,154 398,170" fill="#6d90ae" opacity=".48"/>
+    <polygon points="492,105 548,156 514,174" fill="#82a2ba" opacity=".5"/>
+    <path d="M28,112L42,166M128,92L152,170M252,78L278,174M370,92L398,170M492,105L514,174" fill="none" stroke="#d8eaf8" stroke-opacity=".28"/>
+  </g>
+
+  <g id="far-main-ridge" filter="url(#farSh)" stroke-linejoin="round" stroke-width=".65">
+
+    <!-- M1: peak (50,80) leftmost -->
+    <g stroke="#527090">
+      <polygon points="50,80 30,110 65,105" fill="#d8eaf5"/>
+      <polygon points="30,110 5,148 42,145" fill="#c2d5e5"/>
+      <polygon points="30,110 42,145 65,105" fill="#b5c8d8"/>
+      <polygon points="65,105 42,145 82,142" fill="#90b0c5"/>
+      <polygon points="5,148 -18,218 42,145" fill="#a8c2d4"/>
+      <polygon points="-18,218 30,218 42,145" fill="#98b5c8"/>
+      <polygon points="30,218 42,145 75,218" fill="#88a8bc"/>
+      <polygon points="42,145 75,218 82,142" fill="#7898b0"/>
+      <polygon points="75,218 82,142 122,218" fill="#6888a5"/>
+      <polygon points="50,80 44,95 58,90" fill="#edf5fc"/>
+      <polygon points="44,95 30,110 46,105" fill="#e2eef8"/>
+    </g>
+
+    <!-- M2: peak (178,44) -->
+    <g stroke="#4a6882">
+      <polygon points="178,44 155,78 198,72" fill="#dcecf6"/>
+      <polygon points="155,78 128,115 162,110" fill="#c5d8e8"/>
+      <polygon points="155,78 162,110 198,72" fill="#b8cede"/>
+      <polygon points="198,72 162,110 215,108" fill="#9ab8cc"/>
+      <polygon points="128,115 102,155 145,150" fill="#bdd2e4"/>
+      <polygon points="128,115 145,150 162,110" fill="#afc6d6"/>
+      <polygon points="162,110 145,150 192,148" fill="#9ab8cc"/>
+      <polygon points="162,110 192,148 215,108" fill="#88a8c0"/>
+      <polygon points="215,108 192,148 248,145" fill="#7898b5"/>
+      <polygon points="102,155 82,218 145,150" fill="#a5c0d2"/>
+      <polygon points="82,218 130,218 145,150" fill="#95b0c5"/>
+      <polygon points="130,218 145,150 185,218" fill="#88a8bc"/>
+      <polygon points="145,150 192,148 185,218" fill="#7898b0"/>
+      <polygon points="185,218 192,148 238,218" fill="#7090a8"/>
+      <polygon points="192,148 248,145 238,218" fill="#6080a0"/>
+      <polygon points="238,218 248,145 278,218" fill="#587098"/>
+      <polygon points="178,44 168,60 185,56" fill="#f0f8fd"/>
+      <polygon points="168,60 155,78 165,72" fill="#e5f0f8"/>
+    </g>
+
+    <!-- M3: peak (308,14) TALLEST -->
+    <g stroke="#3e5e80">
+      <polygon points="308,14 282,52 335,48" fill="#deeef8"/>
+      <polygon points="282,52 255,95 295,88" fill="#c8d8e8"/>
+      <polygon points="282,52 295,88 335,48" fill="#bcd0e2"/>
+      <polygon points="335,48 295,88 322,86" fill="#a8c0d5"/>
+      <polygon points="335,48 322,86 358,92" fill="#98b5cc"/>
+      <polygon points="255,95 225,145 262,138" fill="#c2d5e6"/>
+      <polygon points="255,95 262,138 295,88" fill="#b2c8d8"/>
+      <polygon points="295,88 262,138 305,134" fill="#a5c0d2"/>
+      <polygon points="295,88 305,134 322,86" fill="#95b0c5"/>
+      <polygon points="322,86 305,134 345,136" fill="#85a5bc"/>
+      <polygon points="322,86 345,136 358,92" fill="#7598b2"/>
+      <polygon points="358,92 345,136 382,142" fill="#6888a8"/>
+      <polygon points="225,145 205,218 262,138" fill="#b8ccd8"/>
+      <polygon points="205,218 250,218 262,138" fill="#a8bece"/>
+      <polygon points="250,218 262,138 305,134" fill="#98b8c8"/>
+      <polygon points="250,218 305,134 308,218" fill="#88a8bc"/>
+      <polygon points="308,218 305,134 345,136" fill="#7898b0"/>
+      <polygon points="308,218 345,136 365,218" fill="#6888a5"/>
+      <polygon points="365,218 345,136 382,142" fill="#5878a0"/>
+      <polygon points="365,218 382,142 408,218" fill="#4e6e98"/>
+      <polygon points="308,14 298,35 318,30" fill="#f4fafe"/>
+      <polygon points="298,35 282,52 295,44" fill="#e8f4fc"/>
+      <polygon points="318,30 308,14 325,22" fill="#edf6fc"/>
+    </g>
+
+    <!-- M4: peak (440,40) -->
+    <g stroke="#466080">
+      <polygon points="440,40 415,76 462,72" fill="#ddedf6"/>
+      <polygon points="415,76 390,115 425,108" fill="#c5d8e8"/>
+      <polygon points="415,76 425,108 462,72" fill="#b8ccd8"/>
+      <polygon points="462,72 425,108 468,106" fill="#a5bece"/>
+      <polygon points="462,72 468,106 500,110" fill="#92b2c8"/>
+      <polygon points="390,115 368,155 405,148" fill="#c0d4e5"/>
+      <polygon points="390,115 405,148 425,108" fill="#b0c8d5"/>
+      <polygon points="425,108 405,148 452,144" fill="#a0b8c8"/>
+      <polygon points="425,108 452,144 468,106" fill="#90aec0"/>
+      <polygon points="468,106 452,144 492,148" fill="#7e9eb8"/>
+      <polygon points="468,106 492,148 500,110" fill="#6e90ae"/>
+      <polygon points="500,110 492,148 525,152" fill="#5e80a4"/>
+      <polygon points="368,155 348,218 405,148" fill="#b5cad8"/>
+      <polygon points="348,218 390,218 405,148" fill="#a5bece"/>
+      <polygon points="390,218 405,148 445,218" fill="#95b0c5"/>
+      <polygon points="405,148 452,144 445,218" fill="#85a5bc"/>
+      <polygon points="445,218 452,144 500,218" fill="#7898b2"/>
+      <polygon points="452,144 492,148 500,218" fill="#6888a8"/>
+      <polygon points="500,218 492,148 525,152" fill="#5878a0"/>
+      <polygon points="500,218 525,152 550,218" fill="#4e6898"/>
+      <polygon points="440,40 430,58 448,54" fill="#f0f7fc"/>
+      <polygon points="430,58 415,76 428,68" fill="#e5f0f8"/>
+    </g>
+
+    <!-- M5: peak (558,72) rightmost -->
+    <g stroke="#4e7090">
+      <polygon points="558,72 532,108 580,104" fill="#d8eaf5"/>
+      <polygon points="532,108 508,145 545,140" fill="#c2d5e6"/>
+      <polygon points="532,108 545,140 580,104" fill="#b5c8d8"/>
+      <polygon points="580,104 545,140 588,138" fill="#8eb0c5"/>
+      <polygon points="580,104 588,138 618,142" fill="#7ca0b8"/>
+      <polygon points="508,145 490,218 545,140" fill="#a8c2d4"/>
+      <polygon points="490,218 530,218 545,140" fill="#98b5c8"/>
+      <polygon points="530,218 545,140 575,218" fill="#88a8bc"/>
+      <polygon points="545,140 588,138 575,218" fill="#7898b0"/>
+      <polygon points="575,218 588,138 612,218" fill="#6888a5"/>
+      <polygon points="588,138 618,142 612,218" fill="#5878a0"/>
+      <polygon points="612,218 618,142 625,218" fill="#4e6898"/>
+      <polygon points="558,72 550,88 565,84" fill="#edf5fc"/>
+      <polygon points="550,88 532,108 545,100" fill="#e2eef8"/>
+    </g>
+
+  </g>
+
+  <g id="far-micro-facets" stroke-linejoin="round" stroke-width=".45" pointer-events="none">
+    <polygon class="far-facet-light" style="--d:-.4s" points="82,142 116,168 75,218" fill="#dfeef8" opacity=".34"/>
+    <polygon class="far-facet-light" style="--d:-1.2s" points="145,150 168,182 130,218" fill="#d8eaf6" opacity=".32"/>
+    <polygon class="far-facet-light" style="--d:-2.1s" points="192,148 218,178 185,218" fill="#cfe4f1" opacity=".28"/>
+    <polygon class="far-facet-light" style="--d:-.9s" points="262,138 289,172 250,218" fill="#e6f2fa" opacity=".36"/>
+    <polygon class="far-facet-light" style="--d:-3.2s" points="305,134 336,170 308,218" fill="#c8ddea" opacity=".26"/>
+    <polygon class="far-facet-light" style="--d:-1.8s" points="345,136 382,170 365,218" fill="#bed4e4" opacity=".24"/>
+    <polygon class="far-facet-light" style="--d:-2.7s" points="405,148 430,178 390,218" fill="#d8e8f2" opacity=".34"/>
+    <polygon class="far-facet-light" style="--d:-.6s" points="452,144 486,176 445,218" fill="#c2d9e8" opacity=".28"/>
+    <polygon class="far-facet-light" style="--d:-3.6s" points="545,140 568,174 530,218" fill="#dcecf6" opacity=".32"/>
+    <polygon class="far-facet-light" style="--d:-2.4s" points="588,138 610,172 575,218" fill="#bad0e2" opacity=".24"/>
+
+    <polygon points="30,110 50,80 44,124" fill="#ffffff" opacity=".12"/>
+    <polygon points="155,78 178,44 172,102" fill="#ffffff" opacity=".14"/>
+    <polygon points="282,52 308,14 300,104" fill="#ffffff" opacity=".15"/>
+    <polygon points="415,76 440,40 432,112" fill="#ffffff" opacity=".13"/>
+    <polygon points="532,108 558,72 548,142" fill="#ffffff" opacity=".11"/>
+  </g>
+
+  <g id="far-fold-lines" fill="none" stroke-linecap="round" pointer-events="none">
+    <path class="far-fold" d="M50,80L42,145L30,218" stroke="#eff7fc" stroke-width=".65" stroke-opacity=".42"/>
+    <path class="far-fold" d="M178,44L162,110L145,150L130,218" stroke="#eff7fc" stroke-width=".7" stroke-opacity=".45"/>
+    <path class="far-fold" d="M308,14L295,88L305,134L308,218" stroke="#eff7fc" stroke-width=".8" stroke-opacity=".48"/>
+    <path class="far-fold" d="M335,48L322,86L345,136L365,218" stroke="#2f587a" stroke-width=".55" stroke-opacity=".22"/>
+    <path class="far-fold" d="M440,40L425,108L405,148L390,218" stroke="#eff7fc" stroke-width=".68" stroke-opacity=".44"/>
+    <path class="far-fold" d="M558,72L545,140L530,218" stroke="#eff7fc" stroke-width=".62" stroke-opacity=".38"/>
+    <path d="M5,148L42,145L82,142M102,155L145,150L192,148L248,145M225,145L262,138L305,134L345,136L382,142M368,155L405,148L452,144L492,148L525,152M508,145L545,140L588,138" stroke="#274c70" stroke-width=".5" stroke-opacity=".18"/>
+  </g>
+
+  <g id="far-snow-glints" pointer-events="none">
+    <polygon class="far-glint" style="--d:-.3s" points="95,130 103,126 99,136" fill="url(#farFoldHi)"/>
+    <polygon class="far-glint" style="--d:-2.1s" points="228,122 238,118 234,131" fill="url(#farFoldHi)"/>
+    <polygon class="far-glint" style="--d:-3.6s" points="342,112 354,108 350,124" fill="url(#farFoldHi)"/>
+    <polygon class="far-glint" style="--d:-1.4s" points="466,126 476,121 472,135" fill="url(#farFoldHi)"/>
+    <polygon class="far-glint" style="--d:-4.5s" points="592,132 601,128 598,140" fill="url(#farFoldHi)"/>
+  </g>
+
+  <!-- Base ground strip -->
+  <rect x="-20" y="214" width="644" height="7" fill="url(#farBase)" opacity=".3"/>
+  <rect x="-20" y="214" width="644" height="7" fill="url(#iceTex)" opacity=".28"/>
+  <!-- Atmospheric mist -->
+  <path class="far-fog" d="M0,155C100,146 200,158 300,148C400,138 500,152 600,144V175H0Z" fill="url(#farMist)"/>
+  <path class="far-fog" d="M-18,176C80,168 170,178 260,170C350,162 470,174 618,164V190H-18Z" fill="#d8eaf8" opacity=".12" style="animation-delay:-5s"/>
+</svg>

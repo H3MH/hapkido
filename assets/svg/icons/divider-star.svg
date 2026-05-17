@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2 L14.6 9 L22 9.4 L16 13.8 L18 21 L12 17 L6 21 L8 13.8 L2 9.4 L9.4 9 Z"
+                  fill="url(#dividerGold)" stroke="#8a6c30" stroke-width="1.1" stroke-linejoin="round"/>
+            <defs>
+              <radialGradient id="dividerGold" cx="35%" cy="30%" r="80%">
+                <stop offset="0" stop-color="#fbecbe"/>
+                <stop offset="1" stop-color="#a78648"/>
+              </radialGradient>
+            </defs>
+          </svg>

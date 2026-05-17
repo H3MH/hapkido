@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+<defs>
+            <!-- ===== MARRÓN OSO premium (papel kraft con volumen) ===== -->
+            <radialGradient id="furLight" cx="40%" cy="35%" r="75%">
+              <stop offset="0" stop-color="#e8caa0"/>
+              <stop offset="0.55" stop-color="#caa376"/>
+              <stop offset="1" stop-color="#9a7544"/>
+            </radialGradient>
+            <linearGradient id="furShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a17a4a" stop-opacity="0"/>
+              <stop offset="1" stop-color="#704c28" stop-opacity="0.7"/>
+            </linearGradient>
+            <radialGradient id="furBelly" cx="50%" cy="40%" r="70%">
+              <stop offset="0" stop-color="#fbeacd"/>
+              <stop offset="1" stop-color="#dfc198"/>
+            </radialGradient>
+            <radialGradient id="furDark" cx="50%" cy="50%" r="80%">
+              <stop offset="0" stop-color="#a4794a"/>
+              <stop offset="1" stop-color="#6b4925"/>
+            </radialGradient>
+
+            <!-- ===== AZUL bebé (3 tonos para profundidad) ===== -->
+            <radialGradient id="blueLight" cx="35%" cy="30%" r="80%">
+              <stop offset="0" stop-color="#eaf3fb"/>
+              <stop offset="0.5" stop-color="#a8cbe2"/>
+              <stop offset="1" stop-color="#6f9fc0"/>
+            </radialGradient>
+            <linearGradient id="blueShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7da4be" stop-opacity="0"/>
+              <stop offset="1" stop-color="#3d6f95" stop-opacity="0.7"/>
+            </linearGradient>
+            <linearGradient id="bluePaper" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c6dceb"/>
+              <stop offset="1" stop-color="#7ea5c0"/>
+            </linearGradient>
+            <linearGradient id="blueDeep" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#7ea5c0"/>
+              <stop offset="1" stop-color="#3d6f95"/>
+            </linearGradient>
+
+            <!-- ===== VERDE SALVIA / MINT ===== -->
+            <radialGradient id="sageLight" cx="35%" cy="30%" r="80%">
+              <stop offset="0" stop-color="#e8eedd"/>
+              <stop offset="0.5" stop-color="#bccab1"/>
+              <stop offset="1" stop-color="#7a8e6b"/>
+            </radialGradient>
+            <linearGradient id="sageShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a8b69a" stop-opacity="0"/>
+              <stop offset="1" stop-color="#5a6e4d" stop-opacity="0.7"/>
+            </linearGradient>
+
+            <!-- ===== DORADO premium ===== -->
+            <radialGradient id="goldLight" cx="35%" cy="30%" r="80%">
+              <stop offset="0" stop-color="#fbecbe"/>
+              <stop offset="0.5" stop-color="#e0bc70"/>
+              <stop offset="1" stop-color="#9a7c3a"/>
+            </radialGradient>
+            <linearGradient id="goldShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#b08c46" stop-opacity="0"/>
+              <stop offset="1" stop-color="#6e5524" stop-opacity="0.7"/>
+            </linearGradient>
+
+            <!-- ===== CREMA / MARFIL ===== -->
+            <radialGradient id="creamLight" cx="35%" cy="30%" r="80%">
+              <stop offset="0" stop-color="#fffaee"/>
+              <stop offset="0.5" stop-color="#f3e6c5"/>
+              <stop offset="1" stop-color="#c5ad7e"/>
+            </radialGradient>
+            <linearGradient id="creamShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#dac99e" stop-opacity="0"/>
+              <stop offset="1" stop-color="#9c8552" stop-opacity="0.65"/>
+            </linearGradient>
+
+            <!-- ===== BLANCO papel (nubes) ===== -->
+            <radialGradient id="whiteLight" cx="35%" cy="30%" r="85%">
+              <stop offset="0" stop-color="#ffffff"/>
+              <stop offset="0.6" stop-color="#f4f6f9"/>
+              <stop offset="1" stop-color="#c7d2dc"/>
+            </radialGradient>
+            <linearGradient id="whiteShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d2dde6" stop-opacity="0"/>
+              <stop offset="1" stop-color="#8a9aa8" stop-opacity="0.55"/>
+            </linearGradient>
+
+            <!-- ===== BEIGE arena para montañas ===== -->
+            <linearGradient id="beigeLight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8d8b4"/>
+              <stop offset="1" stop-color="#c2ac82"/>
+            </linearGradient>
+            <linearGradient id="beigeShadow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c2ac82"/>
+              <stop offset="1" stop-color="#8e7a52"/>
+            </linearGradient>
+
+            <!-- ===== Filtros ===== -->
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="1.2"/>
+              <feOffset dx="0" dy="1.2" result="off"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+              <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="dropS" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+              <feOffset dx="0" dy="3" result="off"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
+              <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+
+            <!-- Patrón punteado para banderines -->
+            <pattern id="dotsBlue" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="0.9" fill="#5a8aac" opacity="0.6"/>
+            </pattern>
+            <pattern id="stripesGold" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="5" x2="5" y2="0" stroke="#a78648" stroke-width="0.8" opacity="0.45"/>
+            </pattern>
+            <pattern id="dotsCream" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="0.8" fill="#9c8552" opacity="0.5"/>
+            </pattern>
+          </defs>
+            <polygon points="20,3 24,16 37,17 27,26 30,38 20,31 10,38 13,26 3,17 16,16" fill="url(#goldLight)" stroke="#8a6c30" stroke-width="1.1" stroke-linejoin="round"/>
+            <polygon points="20,3 24,16 20,20 16,16" fill="#fff0b8" opacity="0.85"/>
+            <polygon points="24,16 37,17 30,20 20,20" fill="url(#goldShadow)" opacity="0.85"/>
+            <polygon points="30,38 20,31 20,20 27,26" fill="url(#goldShadow)" opacity="0.85"/>
+          </svg>

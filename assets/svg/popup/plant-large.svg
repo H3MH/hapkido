@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 130" id="tree-large-lp">
+  <defs>
+    <!-- === VERDES copa árbol (4 tonos low-poly) === -->
+    <linearGradient id="tl-g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#c8ddb8"/>
+      <stop offset="1"   stop-color="#6a9456"/>
+    </linearGradient>
+    <linearGradient id="tl-g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#9cc47e"/>
+      <stop offset="1"   stop-color="#4d7a3c"/>
+    </linearGradient>
+    <linearGradient id="tl-g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#b8d4a4"/>
+      <stop offset="1"   stop-color="#527a42"/>
+    </linearGradient>
+    <linearGradient id="tl-g4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#daeece"/>
+      <stop offset="1"   stop-color="#7aaa5e"/>
+    </linearGradient>
+    <!-- sombra oscura copa -->
+    <linearGradient id="tl-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#3d6030" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#243d18" stop-opacity="0.72"/>
+    </linearGradient>
+    <!-- sombra media -->
+    <linearGradient id="tl-mid" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#5a8448" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#2e5020" stop-opacity="0.55"/>
+    </linearGradient>
+    <!-- brillo faceta -->
+    <linearGradient id="tl-hi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#eaf8da" stop-opacity="0.9"/>
+      <stop offset="1"   stop-color="#b4d898" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- === TRONCO === -->
+    <linearGradient id="tl-trunk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#9c7248"/>
+      <stop offset="0.4" stop-color="#c49a62"/>
+      <stop offset="1"   stop-color="#7a5430"/>
+    </linearGradient>
+    <linearGradient id="tl-trunk-shd" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#5a3818" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#3a2410" stop-opacity="0.6"/>
+    </linearGradient>
+    <!-- raíces -->
+    <linearGradient id="tl-root" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#b08850"/>
+      <stop offset="1"   stop-color="#6a4820"/>
+    </linearGradient>
+
+    <!-- === VERDE SAGE hojas pequeñas === -->
+    <linearGradient id="tl-sage" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#d0dfc0"/>
+      <stop offset="1"   stop-color="#8aaa74"/>
+    </linearGradient>
+
+    <!-- filtros -->
+    <filter id="tl-shd" x="-15%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.8"/>
+      <feOffset dx="0" dy="2.5" result="o"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tl-shd2" x="-20%" y="-15%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5"/>
+      <feOffset dx="0" dy="3" result="o"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ============================================================
+       SOMBRA EN EL SUELO
+  ============================================================ -->
+  <ellipse cx="45" cy="127" rx="28" ry="3" fill="#2a4018" opacity="0.18"/>
+
+  <!-- ============================================================
+       RAÍCES (low-poly, base del tronco)
+  ============================================================ -->
+  <polygon points="38,118 42,108 45,118 42,122" fill="url(#tl-root)" opacity="0.8"/>
+  <polygon points="52,118 48,108 45,118 48,122" fill="url(#tl-root)" opacity="0.7"/>
+  <polygon points="34,120 38,112 40,120 36,124" fill="url(#tl-root)" opacity="0.6"/>
+  <polygon points="56,120 52,112 50,120 54,124" fill="url(#tl-root)" opacity="0.55"/>
+
+  <!-- ============================================================
+       TRONCO — multi-faceta low-poly
+  ============================================================ -->
+  <g filter="url(#tl-shd)">
+    <!-- cara frontal tronco -->
+    <polygon points="38,52 52,52 55,118 35,118" fill="url(#tl-trunk)"/>
+    <!-- cara lateral derecha (sombra) -->
+    <polygon points="52,52 58,58 60,118 55,118" fill="url(#tl-trunk-shd)" opacity="0.9"/>
+    <!-- cara lateral izquierda (luz) -->
+    <polygon points="38,52 32,58 30,118 35,118" fill="#d4aa78" opacity="0.4"/>
+    <!-- veta/textura tronco izquierda -->
+    <line x1="39" y1="55" x2="37" y2="115" stroke="#8a5c28" stroke-width="0.8" opacity="0.3"/>
+    <!-- veta tronco derecha -->
+    <line x1="51" y1="55" x2="53" y2="115" stroke="#5a3818" stroke-width="0.8" opacity="0.3"/>
+    <!-- nudo del árbol -->
+    <ellipse cx="44" cy="80" rx="4" ry="3" fill="#7a5030" opacity="0.35"/>
+    <ellipse cx="44" cy="80" rx="2" ry="1.5" fill="#5a3818" opacity="0.25"/>
+    <!-- nudo 2 -->
+    <ellipse cx="46" cy="96" rx="3" ry="2" fill="#7a5030" opacity="0.28"/>
+  </g>
+
+  <!-- ============================================================
+       RAMA IZQUIERDA GRUESA
+  ============================================================ -->
+  <g opacity="0.9">
+    <polygon points="42,68 34,58 20,54 18,60 30,66 40,74" fill="url(#tl-trunk)" filter="url(#tl-shd)"/>
+    <polygon points="42,68 34,58 20,54 22,56 34,62 40,70" fill="#d4aa78" opacity="0.4"/>
+  </g>
+
+  <!-- ============================================================
+       RAMA DERECHA GRUESA
+  ============================================================ -->
+  <g opacity="0.9">
+    <polygon points="48,68 56,58 70,54 72,60 60,66 50,74" fill="url(#tl-trunk)" filter="url(#tl-shd)"/>
+    <polygon points="48,68 56,58 70,54 68,56 56,62 50,70" fill="#b08850" opacity="0.35"/>
+  </g>
+
+  <!-- ============================================================
+       RAMITAS SECUNDARIAS
+  ============================================================ -->
+  <line x1="38" y1="62" x2="14" y2="48" stroke="#9c7248" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="52" y1="62" x2="76" y2="48" stroke="#9c7248" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="45" y1="52" x2="30" y2="36" stroke="#9c7248" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="45" y1="52" x2="60" y2="36" stroke="#9c7248" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="28" y1="54" x2="18" y2="44" stroke="#8a6438" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="62" y1="54" x2="72" y2="44" stroke="#8a6438" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- ============================================================
+       COPA DEL ÁRBOL — low-poly multi-capa (de atrás hacia adelante)
+       Capa 1: silueta base (más oscura, atrás)
+  ============================================================ -->
+  <g id="tree-canopy" filter="url(#tl-shd2)">
+
+    <!-- === NIVEL 3 (copa alta, más estrecha) === -->
+    <!-- Faceta trasera izquierda alta -->
+    <polygon points="45,4 22,30 35,26" fill="url(#tl-g2)" opacity="0.85"/>
+    <!-- Faceta trasera derecha alta -->
+    <polygon points="45,4 68,30 55,26" fill="url(#tl-g3)" opacity="0.8"/>
+    <!-- Faceta frontal alta -->
+    <polygon points="45,4 35,26 45,22 55,26" fill="url(#tl-g4)"/>
+    <!-- Sombra nivel 3 -->
+    <polygon points="45,4 55,26 68,30" fill="url(#tl-dark)" opacity="0.5"/>
+    <!-- Brillo punta -->
+    <polygon points="45,4 35,26 45,12" fill="url(#tl-hi)" opacity="0.7"/>
+
+    <!-- === NIVEL 2 (copa media, más ancha) === -->
+    <!-- Faceta trasera izquierda -->
+    <polygon points="32,26 10,52 28,44 38,34" fill="url(#tl-g1)" opacity="0.9"/>
+    <!-- Faceta trasera derecha -->
+    <polygon points="58,26 80,52 62,44 52,34" fill="url(#tl-g2)" opacity="0.85"/>
+    <!-- Faceta izquierda delantera -->
+    <polygon points="38,34 28,44 22,56 38,50 45,40" fill="url(#tl-g4)"/>
+    <!-- Faceta derecha delantera -->
+    <polygon points="52,34 62,44 68,56 52,50 45,40" fill="url(#tl-g3)"/>
+    <!-- Faceta central nivel 2 -->
+    <polygon points="45,22 38,34 45,40 52,34" fill="url(#tl-g4)" opacity="0.9"/>
+    <!-- Sombras nivel 2 -->
+    <polygon points="52,34 62,44 68,56 52,50" fill="url(#tl-dark)" opacity="0.45"/>
+    <polygon points="38,34 32,44 28,52 38,50" fill="url(#tl-mid)" opacity="0.35"/>
+    <!-- Brillo nivel 2 -->
+    <polygon points="38,34 28,44 35,38" fill="url(#tl-hi)" opacity="0.55"/>
+    <polygon points="45,22 38,34 42,28" fill="url(#tl-hi)" opacity="0.5"/>
+
+    <!-- === NIVEL 1 (copa baja, más ancha, base) === -->
+    <!-- Faceta trasera izquierda baja -->
+    <polygon points="22,50 4,76 20,66 32,58" fill="url(#tl-g1)" opacity="0.88"/>
+    <!-- Faceta trasera derecha baja -->
+    <polygon points="68,50 86,76 70,66 58,58" fill="url(#tl-g2)" opacity="0.82"/>
+    <!-- Faceta izquierda delantera baja -->
+    <polygon points="32,58 20,66 16,78 30,72 40,62" fill="url(#tl-g4)"/>
+    <!-- Faceta central-izquierda -->
+    <polygon points="40,62 30,72 36,80 45,72 45,62" fill="url(#tl-g3)" opacity="0.95"/>
+    <!-- Faceta central-derecha -->
+    <polygon points="50,62 60,72 54,80 45,72 45,62" fill="url(#tl-g2)"/>
+    <!-- Faceta derecha delantera baja -->
+    <polygon points="58,58 70,66 74,78 60,72 50,62" fill="url(#tl-g3)" opacity="0.9"/>
+    <!-- Faceta trasera ancha -->
+    <polygon points="45,44 22,50 4,76 45,68 86,76 68,50" fill="url(#tl-g1)" opacity="0.3"/>
+    <!-- Sombras nivel 1 -->
+    <polygon points="58,58 70,66 74,78 60,72" fill="url(#tl-dark)" opacity="0.5"/>
+    <polygon points="32,58 22,68 18,76 30,72" fill="url(#tl-mid)" opacity="0.38"/>
+    <!-- Brillo nivel 1 -->
+    <polygon points="32,58 20,66 26,60" fill="url(#tl-hi)" opacity="0.5"/>
+    <polygon points="40,62 30,72 36,64" fill="url(#tl-hi)" opacity="0.4"/>
+
+    <!-- === CONTORNOS low-poly (bordes de facetas para aspecto cristalizado) === -->
+    <!-- nivel 3 -->
+    <polygon points="45,4 22,30 35,26 45,22 55,26 68,30" fill="none" stroke="#4a7038" stroke-width="0.6" stroke-linejoin="round" opacity="0.5"/>
+    <!-- nivel 2 -->
+    <polygon points="32,26 10,52 22,56 38,50 45,40 52,50 68,56 80,52 58,26 45,22" fill="none" stroke="#3d6030" stroke-width="0.6" stroke-linejoin="round" opacity="0.45"/>
+    <!-- nivel 1 -->
+    <polygon points="22,50 4,76 16,78 30,72 36,80 45,72 54,80 60,72 74,78 86,76 68,50" fill="none" stroke="#2e4e24" stroke-width="0.65" stroke-linejoin="round" opacity="0.4"/>
+
+  </g>
+
+  <!-- ============================================================
+       HOJITAS PEQUEÑAS SUELTAS en bordes (detalles low-poly)
+  ============================================================ -->
+  <!-- Hoja suelta izquierda alta -->
+  <polygon points="14,46 8,38 18,36 20,44" fill="url(#tl-sage)" stroke="#5a7848" stroke-width="0.5" opacity="0.9"/>
+  <polygon points="14,46 18,36 18,42" fill="url(#tl-dark)" opacity="0.4"/>
+  <!-- Hoja suelta derecha alta -->
+  <polygon points="76,46 82,38 72,36 70,44" fill="url(#tl-sage)" stroke="#5a7848" stroke-width="0.5" opacity="0.85"/>
+  <polygon points="76,46 72,36 72,42" fill="url(#tl-dark)" opacity="0.38"/>
+  <!-- Hoja suelta izquierda baja -->
+  <polygon points="8,72 2,64 12,62 14,70" fill="url(#tl-g3)" stroke="#4a6838" stroke-width="0.5" opacity="0.85"/>
+  <polygon points="8,72 12,62 12,68" fill="url(#tl-dark)" opacity="0.4"/>
+  <!-- Hoja suelta derecha baja -->
+  <polygon points="82,72 88,64 78,62 76,70" fill="url(#tl-g2)" stroke="#3d5e2c" stroke-width="0.5" opacity="0.8"/>
+  <!-- Ramita con hoja arriba izq -->
+  <polygon points="26,32 20,24 28,22 30,30" fill="url(#tl-sage)" stroke="#5a7848" stroke-width="0.5" opacity="0.88"/>
+  <!-- Ramita con hoja arriba der -->
+  <polygon points="64,32 70,24 62,22 60,30" fill="url(#tl-g4)" stroke="#4a7038" stroke-width="0.5" opacity="0.85"/>
+  <!-- Frutito/baya decorativa (detalle) -->
+  <circle cx="18" cy="56" r="2.8" fill="#e07878" opacity="0.82"/>
+  <circle cx="18" cy="56" r="1.2" fill="#f8a8a0" opacity="0.7"/>
+  <circle cx="72" cy="58" r="2.4" fill="#e07878" opacity="0.75"/>
+  <circle cx="72" cy="58" r="1" fill="#f8a8a0" opacity="0.65"/>
+  <circle cx="8" cy="76" r="2" fill="#f0a050" opacity="0.7"/>
+  <circle cx="82" cy="74" r="2" fill="#f0a050" opacity="0.65"/>
+
+</svg>

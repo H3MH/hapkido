@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+        <defs>
+          <radialGradient id="thanksFur" cx="40%" cy="35%" r="75%">
+            <stop offset="0" stop-color="#e8caa0"/>
+            <stop offset="0.55" stop-color="#caa376"/>
+            <stop offset="1" stop-color="#9a7544"/>
+          </radialGradient>
+          <linearGradient id="thanksShadow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a17a4a" stop-opacity="0"/>
+            <stop offset="1" stop-color="#704c28" stop-opacity="0.55"/>
+          </linearGradient>
+          <radialGradient id="thanksBelly" cx="50%" cy="40%" r="70%">
+            <stop offset="0" stop-color="#fbeacd"/>
+            <stop offset="1" stop-color="#dfc198"/>
+          </radialGradient>
+          <radialGradient id="thanksBlue" cx="35%" cy="30%" r="80%">
+            <stop offset="0" stop-color="#e6f1f8"/>
+            <stop offset="0.5" stop-color="#a8cde3"/>
+            <stop offset="1" stop-color="#6a9bbe"/>
+          </radialGradient>
+          <linearGradient id="thanksBlueShadow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7da4be" stop-opacity="0"/>
+            <stop offset="1" stop-color="#3d6f95" stop-opacity="0.6"/>
+          </linearGradient>
+        </defs>
+
+        <ellipse cx="110" cy="212" rx="60" ry="5" fill="#000" opacity="0.12"/>
+
+        <!-- Orejas -->
+        <polygon points="48,80 60,52 80,76" fill="url(#thanksFur)" stroke="#5d452c" stroke-width="1.4" stroke-linejoin="round"/>
+        <polygon points="60,52 80,76 70,68" fill="url(#thanksShadow)" opacity="0.85"/>
+        <polygon points="58,76 66,62 74,76" fill="url(#thanksBelly)" stroke="#a88058" stroke-width="0.5"/>
+
+        <polygon points="140,76 160,52 172,80" fill="url(#thanksFur)" stroke="#5d452c" stroke-width="1.4" stroke-linejoin="round"/>
+        <polygon points="140,76 160,52 150,68" fill="url(#thanksShadow)" opacity="0.85"/>
+        <polygon points="148,76 156,62 164,76" fill="url(#thanksBelly)" stroke="#a88058" stroke-width="0.5"/>
+
+        <!-- Cabeza -->
+        <polygon points="50,98 38,128 50,158 80,176 140,176 170,158 182,128 170,98 140,76 80,76"
+                 fill="url(#thanksFur)" stroke="#5d452c" stroke-width="1.6" stroke-linejoin="round"/>
+        <polygon points="140,76 170,98 182,128 170,158 140,176 110,128"
+                 fill="url(#thanksShadow)"/>
+        <line x1="110" y1="76" x2="110" y2="176" stroke="#5d452c" stroke-width="0.6" stroke-dasharray="2 2.5" opacity="0.5"/>
+
+        <!-- Hocico -->
+        <polygon points="82,140 110,128 138,140 134,162 110,170 86,162"
+                 fill="url(#thanksBelly)" stroke="#a88058" stroke-width="1.1" stroke-linejoin="round"/>
+        <polygon points="110,128 138,140 134,162 110,150" fill="#dcbf8e" opacity="0.65"/>
+
+        <!-- Ojos felices cerrados (sonriendo) -->
+        <path d="M76,110 Q84,104 92,110" stroke="#2a1810" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <path d="M128,110 Q136,104 144,110" stroke="#2a1810" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+
+        <!-- Nariz -->
+        <polygon points="102,142 118,142 110,154" fill="#2a1810" stroke="#1a1008" stroke-width="0.6" stroke-linejoin="round"/>
+        <polygon points="105,143 115,143 110,149" fill="#4a3020" opacity="0.8"/>
+
+        <!-- Boca sonriente -->
+        <path d="M110,154 L110,162 M110,162 Q104,166 99,163 M110,162 Q116,166 121,163"
+              stroke="#2a1810" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+        <!-- Mejillas sutiles -->
+        <polygon points="66,148 76,142 84,148 80,158 70,158" fill="#d49572" opacity="0.5"/>
+        <polygon points="136,148 144,142 154,148 150,158 140,158" fill="#d49572" opacity="0.5"/>
+
+        <!-- Pajarita azul -->
+        <polygon points="90,180 110,188 90,196" fill="url(#thanksBlue)" stroke="#3d6f95" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="130,180 110,188 130,196" fill="url(#thanksBlue)" stroke="#3d6f95" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="130,180 110,188 130,196" fill="url(#thanksBlueShadow)" opacity="0.6"/>
+        <polygon points="105,182 115,182 115,194 105,194" fill="url(#thanksBlue)" stroke="#3d6f95" stroke-width="0.9"/>
+      </svg>

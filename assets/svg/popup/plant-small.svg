@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 110" id="tree-small-lp">
+  <defs>
+    <!-- === VERDES copa (variación más fría/mint que el árbol grande) === -->
+    <linearGradient id="ts-g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#b8d8c0"/>
+      <stop offset="1"   stop-color="#5a8e6a"/>
+    </linearGradient>
+    <linearGradient id="ts-g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#8cc4a0"/>
+      <stop offset="1"   stop-color="#3d6e50"/>
+    </linearGradient>
+    <linearGradient id="ts-g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#cce8d4"/>
+      <stop offset="1"   stop-color="#4e7a5c"/>
+    </linearGradient>
+    <linearGradient id="ts-g4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#e0f2e6"/>
+      <stop offset="1"   stop-color="#72a882"/>
+    </linearGradient>
+    <!-- sombra oscura -->
+    <linearGradient id="ts-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#2e5038" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#183028" stop-opacity="0.7"/>
+    </linearGradient>
+    <!-- brillo -->
+    <linearGradient id="ts-hi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#f0fff4" stop-opacity="0.85"/>
+      <stop offset="1"   stop-color="#a8d8b8" stop-opacity="0"/>
+    </linearGradient>
+    <!-- === TRONCO === -->
+    <linearGradient id="ts-trunk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#b08858"/>
+      <stop offset="0.5" stop-color="#d4a870"/>
+      <stop offset="1"   stop-color="#806038"/>
+    </linearGradient>
+    <linearGradient id="ts-root" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#c09860"/>
+      <stop offset="1"   stop-color="#705030"/>
+    </linearGradient>
+    <!-- === AZUL SAGE (hojita derecha distinta) === -->
+    <linearGradient id="ts-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#c8e0f0"/>
+      <stop offset="1"   stop-color="#6898c0"/>
+    </linearGradient>
+    <!-- filtro -->
+    <filter id="ts-shd" x="-15%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="2" result="o"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.28"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- sombra suelo -->
+  <ellipse cx="35" cy="107" rx="20" ry="2.5" fill="#1e3820" opacity="0.16"/>
+
+  <!-- ============ RAÍCES ============ -->
+  <polygon points="30,100 33,90 35,100 32,104" fill="url(#ts-root)" opacity="0.75"/>
+  <polygon points="40,100 37,90 35,100 38,104" fill="url(#ts-root)" opacity="0.65"/>
+  <polygon points="27,102 30,94 32,102 28,106" fill="url(#ts-root)" opacity="0.55"/>
+  <polygon points="43,102 40,94 38,102 42,106" fill="url(#ts-root)" opacity="0.5"/>
+
+  <!-- ============ TRONCO multi-faceta ============ -->
+  <g filter="url(#ts-shd)">
+    <polygon points="30,46 40,46 43,100 27,100" fill="url(#ts-trunk)"/>
+    <polygon points="40,46 46,52 48,100 43,100" fill="#7a5030" opacity="0.45"/>
+    <polygon points="30,46 24,52 22,100 27,100" fill="#d4a870" opacity="0.35"/>
+    <!-- veta -->
+    <line x1="31" y1="48" x2="29" y2="98" stroke="#7a5030" stroke-width="0.7" opacity="0.28"/>
+    <line x1="39" y1="48" x2="41" y2="98" stroke="#5a3820" stroke-width="0.7" opacity="0.28"/>
+    <!-- nudo -->
+    <ellipse cx="34" cy="70" rx="3.5" ry="2.5" fill="#6a4020" opacity="0.3"/>
+    <ellipse cx="36" cy="84" rx="2.5" ry="1.8" fill="#6a4020" opacity="0.22"/>
+  </g>
+
+  <!-- ============ RAMA IZQ ============ -->
+  <polygon points="33,56 26,48 14,46 13,52 24,56 32,62" fill="url(#ts-trunk)" opacity="0.88"/>
+  <line x1="32" y1="54" x2="10" y2="42" stroke="#9c7248" stroke-width="2" stroke-linecap="round"/>
+  <line x1="35" y1="46" x2="22" y2="32" stroke="#9c7248" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- ============ RAMA DER ============ -->
+  <polygon points="37,56 44,48 56,46 57,52 46,56 38,62" fill="url(#ts-trunk)" opacity="0.82"/>
+  <line x1="38" y1="54" x2="60" y2="42" stroke="#9c7248" stroke-width="2" stroke-linecap="round"/>
+  <line x1="35" y1="46" x2="48" y2="32" stroke="#9c7248" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- ============================================================
+       COPA — 3 niveles low-poly (árbol más compacto y redondeado)
+  ============================================================ -->
+  <g id="tree-sm-canopy" filter="url(#ts-shd)">
+
+    <!-- NIVEL ALTO (punta) -->
+    <polygon points="35,4 18,26 28,22" fill="url(#ts-g1)" opacity="0.88"/>
+    <polygon points="35,4 52,26 42,22" fill="url(#ts-g2)" opacity="0.82"/>
+    <polygon points="35,4 28,22 35,18 42,22" fill="url(#ts-g4)"/>
+    <polygon points="35,4 42,22 52,26" fill="url(#ts-dark)" opacity="0.42"/>
+    <polygon points="35,4 28,22 35,10" fill="url(#ts-hi)" opacity="0.65"/>
+
+    <!-- NIVEL MEDIO -->
+    <polygon points="22,22 6,46 20,38 30,28" fill="url(#ts-g1)" opacity="0.9"/>
+    <polygon points="48,22 64,46 50,38 40,28" fill="url(#ts-g2)" opacity="0.84"/>
+    <polygon points="30,28 20,38 18,50 30,44 35,34" fill="url(#ts-g4)"/>
+    <polygon points="35,18 30,28 35,34 40,28" fill="url(#ts-g3)" opacity="0.9"/>
+    <polygon points="40,28 50,38 52,50 40,44 35,34" fill="url(#ts-g2)" opacity="0.88"/>
+    <polygon points="40,28 50,38 52,48 40,44" fill="url(#ts-dark)" opacity="0.42"/>
+    <polygon points="30,28 20,38 26,32" fill="url(#ts-hi)" opacity="0.5"/>
+
+    <!-- NIVEL BAJO (base copa) -->
+    <polygon points="18,44 4,66 16,58 26,50" fill="url(#ts-g1)" opacity="0.86"/>
+    <polygon points="52,44 66,66 54,58 44,50" fill="url(#ts-g2)" opacity="0.8"/>
+    <polygon points="26,50 16,58 14,68 26,62 33,54" fill="url(#ts-g3)"/>
+    <polygon points="33,54 26,62 30,70 35,62 35,54" fill="url(#ts-g4)" opacity="0.92"/>
+    <polygon points="37,54 44,62 40,70 35,62 35,54" fill="url(#ts-g2)"/>
+    <polygon points="44,50 54,58 56,68 44,62 37,54" fill="url(#ts-g1)" opacity="0.88"/>
+    <!-- sombras nivel bajo -->
+    <polygon points="44,50 54,58 56,68 44,62" fill="url(#ts-dark)" opacity="0.48"/>
+    <polygon points="26,50 18,58 14,66 26,62" fill="url(#ts-dark)" opacity="0.28"/>
+    <!-- brillo nivel bajo -->
+    <polygon points="26,50 16,58 22,52" fill="url(#ts-hi)" opacity="0.48"/>
+    <polygon points="33,54 26,62 30,56" fill="url(#ts-hi)" opacity="0.38"/>
+
+    <!-- Contornos low-poly -->
+    <polygon points="35,4 18,26 28,22 35,18 42,22 52,26" fill="none" stroke="#3d6050" stroke-width="0.55" stroke-linejoin="round" opacity="0.5"/>
+    <polygon points="22,22 6,46 18,50 30,44 35,34 40,44 52,50 64,46 48,22 35,18" fill="none" stroke="#2e5040" stroke-width="0.55" stroke-linejoin="round" opacity="0.42"/>
+    <polygon points="18,44 4,66 14,68 26,62 30,70 35,62 40,70 44,62 56,68 66,66 52,44" fill="none" stroke="#243830" stroke-width="0.6" stroke-linejoin="round" opacity="0.38"/>
+  </g>
+
+  <!-- ============ HOJITAS SUELTAS + DETALLES ============ -->
+  <!-- Hoja suelta izq alta (tono azul-sage, distinto al grande) -->
+  <polygon points="10,40 4,32 14,30 16,38" fill="url(#ts-blue)" stroke="#4a7890" stroke-width="0.5" opacity="0.88"/>
+  <polygon points="10,40 14,30 14,36" fill="url(#ts-dark)" opacity="0.38"/>
+  <!-- Hoja suelta der alta -->
+  <polygon points="60,40 66,32 56,30 54,38" fill="url(#ts-g3)" stroke="#3e6048" stroke-width="0.5" opacity="0.85"/>
+  <!-- Hoja suelta izq baja -->
+  <polygon points="6,62 0,54 10,52 12,60" fill="url(#ts-g4)" stroke="#3e6048" stroke-width="0.5" opacity="0.82"/>
+  <!-- Hoja suelta der baja -->
+  <polygon points="64,62 70,54 60,52 58,60" fill="url(#ts-blue)" stroke="#4a7890" stroke-width="0.5" opacity="0.78"/>
+  <!-- Hoja extra ramita izq -->
+  <polygon points="18,28 12,20 22,18 24,26" fill="url(#ts-g1)" stroke="#4a6a50" stroke-width="0.5" opacity="0.85"/>
+  <!-- Hoja extra ramita der -->
+  <polygon points="52,28 58,20 48,18 46,26" fill="url(#ts-g3)" stroke="#3e6048" stroke-width="0.5" opacity="0.82"/>
+
+  <!-- Bayas/frutos decorativos (distintos colores al árbol grande) -->
+  <circle cx="8" cy="44" r="2.5" fill="#c878d8" opacity="0.8"/>
+  <circle cx="8" cy="44" r="1.1" fill="#f0b8f8" opacity="0.7"/>
+  <circle cx="62" cy="46" r="2.2" fill="#c878d8" opacity="0.72"/>
+  <circle cx="6" cy="64" r="1.8" fill="#78c8d8" opacity="0.75"/>
+  <circle cx="64" cy="64" r="1.8" fill="#78c8d8" opacity="0.7"/>
+</svg>

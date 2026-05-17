@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 218" preserveAspectRatio="xMidYEnd meet" role="img">
+  <defs>
+    <style>
+      #mid-back-ridge{animation:midBackDrift 12.5s ease-in-out infinite;transform-origin:300px 216px}
+      #mid-main-ridge{animation:midRidgeBreath 10.2s ease-in-out infinite;transform-origin:300px 216px}
+      .mid-facet-light{animation:midFacetGlow 7.6s ease-in-out infinite;animation-delay:var(--d,0s)}
+      .mid-glint{animation:midGlint 5.9s ease-in-out infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center}
+      .mid-fold{stroke-dasharray:6 6;animation:midFoldTrace 15.5s linear infinite}
+      .mid-fog{animation:midFog 11.5s ease-in-out infinite}
+      @keyframes midBackDrift{0%,100%{transform:translateX(2px) translateY(0)}50%{transform:translateX(-4px) translateY(-1px)}}
+      @keyframes midRidgeBreath{0%,100%{transform:skewX(0deg) translateY(0)}42%{transform:skewX(-.55deg) translateY(-2px)}72%{transform:skewX(.25deg) translateY(.6px)}}
+      @keyframes midFacetGlow{0%,100%{opacity:.24}43%{opacity:.68}63%{opacity:.36}}
+      @keyframes midGlint{0%,52%,100%{opacity:0;transform:scale(.68) rotate(-4deg)}61%{opacity:.84;transform:scale(1.12) rotate(8deg)}74%{opacity:.22;transform:scale(.88) rotate(2deg)}}
+      @keyframes midFoldTrace{to{stroke-dashoffset:-84}}
+      @keyframes midFog{0%,100%{transform:translateX(8px);opacity:.3}50%{transform:translateX(-10px);opacity:.56}}
+      @media (prefers-reduced-motion:reduce){
+        #mid-back-ridge,#mid-main-ridge,.mid-facet-light,.mid-glint,.mid-fold,.mid-fog{animation:none!important}
+      }
+    </style>
+    <filter id="midSh" x="-7%" y="-16%" width="114%" height="132%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#2a4e72" flood-opacity=".22"/>
+    </filter>
+    <linearGradient id="midBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4e7898"/>
+      <stop offset="1" stop-color="#345e7a"/>
+    </linearGradient>
+    <linearGradient id="midMist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8d2e8" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#b8d2e8" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="stoneTex" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M3,4h2M10,2h1M15,9h2M6,15h2M12,13h1" stroke="#315f7f" stroke-width=".48" opacity=".22"/>
+      <path d="M1,11h1M8,8h2M16,3h1" stroke="#fff" stroke-width=".42" opacity=".28"/>
+    </pattern>
+    <linearGradient id="midRidgeSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#75a5c0" stop-opacity=".62"/>
+      <stop offset=".58" stop-color="#356b92" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#173a5f" stop-opacity=".34"/>
+    </linearGradient>
+    <linearGradient id="midFoldHi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#93bed2" stop-opacity=".1"/>
+    </linearGradient>
+  </defs>
+
+  <g id="mid-back-ridge" opacity=".54" stroke="#245070" stroke-width=".65" stroke-linejoin="round">
+    <polygon points="-24,150 35,102 98,148 154,82 220,150 288,72 350,150 420,86 482,152 540,105 625,160 625,218 -24,218" fill="url(#midRidgeSoft)"/>
+    <polygon points="35,102 98,148 55,168" fill="#5d8eaa" opacity=".55"/>
+    <polygon points="154,82 220,150 178,172" fill="#4e7fa0" opacity=".5"/>
+    <polygon points="288,72 350,150 312,174" fill="#3b6e94" opacity=".48"/>
+    <polygon points="420,86 482,152 444,173" fill="#315f84" opacity=".44"/>
+    <polygon points="540,105 625,160 578,178" fill="#4b7898" opacity=".46"/>
+    <path d="M35,102L55,168M154,82L178,172M288,72L312,174M420,86L444,173M540,105L578,178" fill="none" stroke="#bde0ee" stroke-opacity=".2"/>
+  </g>
+
+  <g id="mid-main-ridge" filter="url(#midSh)" stroke-linejoin="round" stroke-width=".85">
+
+    <!-- M1: peak (68,62) leftmost -->
+    <g stroke="#2e5878">
+      <polygon points="68,62 42,100 92,96" fill="#85b0c8"/>
+      <polygon points="42,100 18,138 55,132" fill="#5e8eaa"/>
+      <polygon points="42,100 55,132 92,96" fill="#5080a0"/>
+      <polygon points="92,96 55,132 100,128" fill="#3e6e8e"/>
+      <polygon points="92,96 100,128 130,134" fill="#305e82"/>
+      <polygon points="18,138 -18,215 55,132" fill="#6090aa"/>
+      <polygon points="-18,215 20,215 55,132" fill="#4e7898"/>
+      <polygon points="20,215 55,132 70,215" fill="#3e6888"/>
+      <polygon points="55,132 100,128 70,215" fill="#305880"/>
+      <polygon points="70,215 100,128 120,215" fill="#284e72"/>
+      <polygon points="100,128 130,134 120,215" fill="#204468"/>
+      <polygon points="120,215 130,134 155,215" fill="#1c3e60"/>
+      <polygon points="68,62 58,82 75,78" fill="#a0c5d8"/>
+      <polygon points="58,82 42,100 56,94" fill="#8ab8cc"/>
+    </g>
+
+    <!-- M2: peak (215,34) TALLEST of this layer -->
+    <g stroke="#244e70">
+      <polygon points="215,34 185,72 242,68" fill="#8ab5cc"/>
+      <polygon points="185,72 158,112 200,105" fill="#5888a8"/>
+      <polygon points="185,72 200,105 242,68" fill="#4e80a0"/>
+      <polygon points="242,68 200,105 248,102" fill="#3c6e92"/>
+      <polygon points="242,68 248,102 282,108" fill="#2e5e82"/>
+      <polygon points="158,112 128,152 168,145" fill="#5888a8"/>
+      <polygon points="158,112 168,145 200,105" fill="#4878a0"/>
+      <polygon points="200,105 168,145 215,140" fill="#3a6a90"/>
+      <polygon points="200,105 215,140 248,102" fill="#305880"/>
+      <polygon points="248,102 215,140 258,142" fill="#265278"/>
+      <polygon points="248,102 258,142 282,108" fill="#1e4870"/>
+      <polygon points="282,108 258,142 295,148" fill="#183e65"/>
+      <polygon points="128,152 105,215 168,145" fill="#5e8eaa"/>
+      <polygon points="105,215 145,215 168,145" fill="#4e7898"/>
+      <polygon points="145,215 168,145 195,215" fill="#3e6888"/>
+      <polygon points="168,145 215,140 195,215" fill="#305878"/>
+      <polygon points="195,215 215,140 245,215" fill="#264e70"/>
+      <polygon points="215,140 258,142 245,215" fill="#1e4268"/>
+      <polygon points="245,215 258,142 290,215" fill="#183a60"/>
+      <polygon points="258,142 295,148 290,215" fill="#143458"/>
+      <polygon points="290,215 295,148 315,215" fill="#103058"/>
+      <polygon points="215,34 205,55 222,50" fill="#a5c8da"/>
+      <polygon points="205,55 185,72 200,65" fill="#8abac8"/>
+    </g>
+
+    <!-- M3: peak (385,40) -->
+    <g stroke="#2c5678">
+      <polygon points="385,40 358,78 412,74" fill="#88b2c8"/>
+      <polygon points="358,78 332,118 370,110" fill="#5a8aa8"/>
+      <polygon points="358,78 370,110 412,74" fill="#4c7ea0"/>
+      <polygon points="412,74 370,110 415,108" fill="#3c6c90"/>
+      <polygon points="412,74 415,108 448,112" fill="#2e5e82"/>
+      <polygon points="332,118 308,215 370,110" fill="#5e8eaa"/>
+      <polygon points="308,215 345,215 370,110" fill="#4e7898"/>
+      <polygon points="345,215 370,110 398,215" fill="#3e6888"/>
+      <polygon points="370,110 415,108 398,215" fill="#306080"/>
+      <polygon points="398,215 415,108 450,215" fill="#264e72"/>
+      <polygon points="415,108 448,112 450,215" fill="#1e4268"/>
+      <polygon points="450,215 448,112 472,215" fill="#183860"/>
+      <polygon points="385,40 375,60 392,56" fill="#a2c5d8"/>
+      <polygon points="375,60 358,78 372,70" fill="#88b8c8"/>
+    </g>
+
+    <!-- M4: peak (538,60) rightmost -->
+    <g stroke="#305878">
+      <polygon points="538,60 510,98 562,94" fill="#85b0c8"/>
+      <polygon points="510,98 482,138 522,132" fill="#5e8eaa"/>
+      <polygon points="510,98 522,132 562,94" fill="#508098"/>
+      <polygon points="562,94 522,132 568,128" fill="#3c6e8e"/>
+      <polygon points="562,94 568,128 600,134" fill="#2e5e82"/>
+      <polygon points="482,138 462,215 522,132" fill="#6090aa"/>
+      <polygon points="462,215 500,215 522,132" fill="#4e7898"/>
+      <polygon points="500,215 522,132 548,215" fill="#3e6888"/>
+      <polygon points="522,132 568,128 548,215" fill="#305880"/>
+      <polygon points="548,215 568,128 592,215" fill="#284e72"/>
+      <polygon points="568,128 600,134 592,215" fill="#204468"/>
+      <polygon points="592,215 600,134 622,215" fill="#1c3e60"/>
+      <polygon points="538,60 528,80 545,76" fill="#a0c5d8"/>
+      <polygon points="528,80 510,98 525,90" fill="#88b8cc"/>
+    </g>
+
+  </g>
+
+  <g id="mid-micro-facets" stroke-linejoin="round" stroke-width=".58" pointer-events="none">
+    <polygon class="mid-facet-light" style="--d:-.6s" points="18,138 42,164 20,215" fill="#78a8c0" opacity=".3"/>
+    <polygon class="mid-facet-light" style="--d:-1.7s" points="55,132 92,162 70,215" fill="#6e9ab6" opacity=".28"/>
+    <polygon class="mid-facet-light" style="--d:-3.1s" points="100,128 128,166 120,215" fill="#4f7fa0" opacity=".24"/>
+    <polygon class="mid-facet-light" style="--d:-.9s" points="168,145 198,176 145,215" fill="#7aa6bc" opacity=".32"/>
+    <polygon class="mid-facet-light" style="--d:-2.4s" points="215,140 248,174 195,215" fill="#5c8cad" opacity=".28"/>
+    <polygon class="mid-facet-light" style="--d:-4s" points="258,142 286,174 245,215" fill="#406f94" opacity=".24"/>
+    <polygon class="mid-facet-light" style="--d:-1.2s" points="370,110 386,160 345,215" fill="#74a0b8" opacity=".3"/>
+    <polygon class="mid-facet-light" style="--d:-2.9s" points="415,108 438,160 398,215" fill="#5a88a8" opacity=".26"/>
+    <polygon class="mid-facet-light" style="--d:-.3s" points="522,132 552,166 500,215" fill="#76a2bb" opacity=".3"/>
+    <polygon class="mid-facet-light" style="--d:-3.5s" points="568,128 594,166 548,215" fill="#4e7fa2" opacity=".24"/>
+
+    <polygon points="42,100 68,62 58,132" fill="#ffffff" opacity=".1"/>
+    <polygon points="185,72 215,34 202,145" fill="#ffffff" opacity=".12"/>
+    <polygon points="358,78 385,40 372,150" fill="#ffffff" opacity=".1"/>
+    <polygon points="510,98 538,60 524,152" fill="#ffffff" opacity=".1"/>
+    <polygon points="242,68 264,112 248,102" fill="#102f55" opacity=".14"/>
+    <polygon points="412,74 436,120 415,108" fill="#102f55" opacity=".13"/>
+  </g>
+
+  <g id="mid-fold-lines" fill="none" stroke-linecap="round" pointer-events="none">
+    <path class="mid-fold" d="M68,62L55,132L20,215" stroke="#d5edf8" stroke-width=".78" stroke-opacity=".38"/>
+    <path class="mid-fold" d="M215,34L200,105L215,140L195,215" stroke="#d5edf8" stroke-width=".9" stroke-opacity=".42"/>
+    <path class="mid-fold" d="M242,68L248,102L258,142L245,215" stroke="#0f3458" stroke-width=".65" stroke-opacity=".28"/>
+    <path class="mid-fold" d="M385,40L370,110L345,215" stroke="#d5edf8" stroke-width=".86" stroke-opacity=".38"/>
+    <path class="mid-fold" d="M538,60L522,132L500,215" stroke="#d5edf8" stroke-width=".78" stroke-opacity=".36"/>
+    <path d="M18,138L55,132L100,128L130,134M128,152L168,145L215,140L258,142L295,148M332,118L370,110L415,108L448,112M482,138L522,132L568,128L600,134" stroke="#082b4f" stroke-width=".58" stroke-opacity=".24"/>
+  </g>
+
+  <g id="mid-glints" pointer-events="none">
+    <polygon class="mid-glint" style="--d:-.2s" points="104,122 115,118 110,133" fill="url(#midFoldHi)"/>
+    <polygon class="mid-glint" style="--d:-1.5s" points="260,118 272,114 267,130" fill="url(#midFoldHi)"/>
+    <polygon class="mid-glint" style="--d:-3.3s" points="426,126 438,121 432,138" fill="url(#midFoldHi)"/>
+    <polygon class="mid-glint" style="--d:-2.4s" points="582,126 594,122 589,138" fill="url(#midFoldHi)"/>
+    <polygon class="mid-glint" style="--d:-4.2s" points="180,154 190,151 186,164" fill="url(#midFoldHi)"/>
+  </g>
+
+  <!-- Base ground wave -->
+  <path d="M-18,208C60,215 140,208 220,214C300,220 380,208 460,214C520,218 575,210 622,214V218H-18Z" fill="url(#midBase)" opacity=".45"/>
+  <path d="M-18,208C60,215 140,208 220,214C300,220 380,208 460,214C520,218 575,210 622,214V218H-18Z" fill="url(#stoneTex)" opacity=".35"/>
+  <!-- Mist line -->
+  <path class="mid-fog" d="M0,168C80,158 180,170 280,160C380,150 480,162 600,155V188H0Z" fill="url(#midMist)"/>
+  <path class="mid-fog" d="M-20,184C76,176 160,188 252,178C348,168 468,184 622,174V202H-20Z" fill="#b8d2e8" opacity=".1" style="animation-delay:-4s"/>
+</svg>

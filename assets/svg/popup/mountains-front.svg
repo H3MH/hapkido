@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 192" preserveAspectRatio="xMidYEnd meet" role="img">
+  <defs>
+    <style>
+      #front-back-ridge{animation:frontBackDrift 10.5s ease-in-out infinite;transform-origin:300px 190px}
+      #front-main-ridge{animation:frontRidgeBreath 8.8s ease-in-out infinite;transform-origin:300px 190px}
+      .front-facet-light{animation:frontFacetGlow 6.8s ease-in-out infinite;animation-delay:var(--d,0s)}
+      .front-glint{animation:frontGlint 5.2s ease-in-out infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center}
+      .front-fold{stroke-dasharray:6 5;animation:frontFoldTrace 13s linear infinite}
+      .front-ground-facet{animation:frontGroundShift 7.8s ease-in-out infinite;animation-delay:var(--d,0s)}
+      @keyframes frontBackDrift{0%,100%{transform:translateX(-2px) translateY(0)}50%{transform:translateX(3px) translateY(-1px)}}
+      @keyframes frontRidgeBreath{0%,100%{transform:skewX(0deg) translateY(0)}45%{transform:skewX(.62deg) translateY(-2.4px)}75%{transform:skewX(-.3deg) translateY(.5px)}}
+      @keyframes frontFacetGlow{0%,100%{opacity:.26}38%{opacity:.72}64%{opacity:.42}}
+      @keyframes frontGlint{0%,48%,100%{opacity:0;transform:scale(.66) rotate(-6deg)}58%{opacity:.86;transform:scale(1.16) rotate(9deg)}72%{opacity:.24;transform:scale(.9) rotate(1deg)}}
+      @keyframes frontFoldTrace{to{stroke-dashoffset:-78}}
+      @keyframes frontGroundShift{0%,100%{opacity:.28}50%{opacity:.58}}
+      @media (prefers-reduced-motion:reduce){
+        #front-back-ridge,#front-main-ridge,.front-facet-light,.front-glint,.front-fold,.front-ground-facet{animation:none!important}
+      }
+    </style>
+    <!-- Sage gradients -->
+    <linearGradient id="sageGnd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a9e6a"/>
+      <stop offset="1" stop-color="#6a7e4e"/>
+    </linearGradient>
+    <!-- Earth gradients -->
+    <linearGradient id="earthGnd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c4a460"/>
+      <stop offset="1" stop-color="#8a7040"/>
+    </linearGradient>
+    <filter id="frontSh" x="-9%" y="-22%" width="118%" height="144%">
+      <feDropShadow dx="0" dy="4" stdDeviation="2.2" flood-color="#4a3820" flood-opacity=".22"/>
+    </filter>
+    <linearGradient id="frontGnd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8ea06a"/>
+      <stop offset="1" stop-color="#6a7c4e"/>
+    </linearGradient>
+    <pattern id="organicTex" width="17" height="17" patternUnits="userSpaceOnUse">
+      <path d="M2,4h2M8,2h1M13,6h2M5,13h2M11,15h1" stroke="#5d704f" stroke-width=".48" opacity=".24"/>
+      <path d="M1,10h2M9,8h1M14,2h1" stroke="#fff" stroke-width=".42" opacity=".3"/>
+    </pattern>
+    <linearGradient id="frontRidgeSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b9c98e" stop-opacity=".56"/>
+      <stop offset=".45" stop-color="#8aa06a" stop-opacity=".46"/>
+      <stop offset="1" stop-color="#536a42" stop-opacity=".34"/>
+    </linearGradient>
+    <linearGradient id="frontFoldHi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7d8" stop-opacity=".76"/>
+      <stop offset=".58" stop-color="#dce9b8" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#8ea06a" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+
+  <g id="front-back-ridge" opacity=".58" stroke="#536a42" stroke-width=".7" stroke-linejoin="round">
+    <polygon points="-24,150 38,104 104,146 154,88 222,150 292,94 354,146 420,92 482,150 538,108 624,154 624,192 -24,192" fill="url(#frontRidgeSoft)"/>
+    <polygon points="38,104 104,146 62,166" fill="#94aa72" opacity=".52"/>
+    <polygon points="154,88 222,150 180,168" fill="#ac8d4d" opacity=".28"/>
+    <polygon points="292,94 354,146 316,166" fill="#7a9870" opacity=".42"/>
+    <polygon points="420,92 482,150 446,168" fill="#9c8654" opacity=".26"/>
+    <polygon points="538,108 624,154 578,170" fill="#819860" opacity=".42"/>
+    <path d="M38,104L62,166M154,88L180,168M292,94L316,166M420,92L446,168M538,108L578,170" fill="none" stroke="#e8f2c8" stroke-opacity=".22"/>
+  </g>
+
+  <g id="front-main-ridge" filter="url(#frontSh)" stroke-linejoin="round" stroke-width="1.05">
+
+    <!-- M1 SAGE LEFT: peak (55,66) -->
+    <g stroke="#4e6638">
+      <polygon points="55,66 30,102 78,98" fill="#b0c890"/>
+      <polygon points="30,102 8,138 42,132" fill="#8aa870"/>
+      <polygon points="30,102 42,132 78,98" fill="#7e9c65"/>
+      <polygon points="78,98 42,132 88,128" fill="#657e4e"/>
+      <polygon points="78,98 88,128 118,134" fill="#506240"/>
+      <polygon points="8,138 -18,188 42,132" fill="#8aa870"/>
+      <polygon points="-18,188 22,188 42,132" fill="#7a9460"/>
+      <polygon points="22,188 42,132 65,188" fill="#6a8450"/>
+      <polygon points="42,132 88,128 65,188" fill="#597442"/>
+      <polygon points="65,188 88,128 108,188" fill="#4e6438"/>
+      <polygon points="88,128 118,134 108,188" fill="#425630"/>
+      <polygon points="108,188 118,134 140,188" fill="#384a28"/>
+      <!-- lichen highlight near peak -->
+      <polygon points="55,66 48,84 62,80" fill="#d4e8b8"/>
+      <polygon points="48,84 30,102 44,96" fill="#c0da9e"/>
+      <!-- exposed rock accent -->
+      <polygon points="42,132 52,120 60,128" fill="#9a9080"/>
+    </g>
+
+    <!-- M2 EARTH/BEIGE: peak (222,48) -->
+    <g stroke="#6a5028">
+      <polygon points="222,48 195,85 248,80" fill="#d8b870"/>
+      <polygon points="195,85 168,125 205,118" fill="#b89050"/>
+      <polygon points="195,85 205,118 248,80" fill="#aa8240"/>
+      <polygon points="248,80 205,118 252,114" fill="#927038"/>
+      <polygon points="248,80 252,114 285,120" fill="#7e5e2e"/>
+      <polygon points="168,125 148,188 205,118" fill="#c0a05a"/>
+      <polygon points="148,188 185,188 205,118" fill="#a88848"/>
+      <polygon points="185,188 205,118 232,188" fill="#927438"/>
+      <polygon points="205,118 252,114 232,188" fill="#7e6030"/>
+      <polygon points="232,188 252,114 282,188" fill="#6e5228"/>
+      <polygon points="252,114 285,120 282,188" fill="#5e4420"/>
+      <polygon points="282,188 285,120 305,188" fill="#4e3818"/>
+      <!-- warm lichen/mineral highlights -->
+      <polygon points="222,48 212,68 228,64" fill="#ecd89a"/>
+      <polygon points="212,68 195,85 208,78" fill="#d8c278"/>
+      <!-- rock face accent -->
+      <polygon points="205,118 218,108 225,118" fill="#a89278"/>
+      <polygon points="252,114 262,102 272,112" fill="#8a7860"/>
+    </g>
+
+    <!-- M3 BLUE-STONE: peak (388,52) -->
+    <g stroke="#2e5878">
+      <polygon points="388,52 362,90 415,86" fill="#90bac8"/>
+      <polygon points="362,90 335,130 372,122" fill="#5e8aa8"/>
+      <polygon points="362,90 372,122 415,86" fill="#527ea0"/>
+      <polygon points="415,86 372,122 420,118" fill="#3e6a90"/>
+      <polygon points="415,86 420,118 452,124" fill="#2e5882"/>
+      <polygon points="335,130 315,188 372,122" fill="#6090a8"/>
+      <polygon points="315,188 350,188 372,122" fill="#4e7898"/>
+      <polygon points="350,188 372,122 400,188" fill="#3e6888"/>
+      <polygon points="372,122 420,118 400,188" fill="#305a80"/>
+      <polygon points="400,188 420,118 448,188" fill="#264e72"/>
+      <polygon points="420,118 452,124 448,188" fill="#1e4268"/>
+      <polygon points="448,188 452,124 470,188" fill="#183860"/>
+      <!-- mineral/lichen highlights -->
+      <polygon points="388,52 378,72 394,68" fill="#b0d0e0"/>
+      <polygon points="378,72 362,90 375,82" fill="#92bcd0"/>
+      <!-- stone crack accent -->
+      <polygon points="372,122 382,112 388,122" fill="#8aacbe"/>
+    </g>
+
+    <!-- M4 SAGE RIGHT: peak (545,68) -->
+    <g stroke="#486235">
+      <polygon points="545,68 518,105 568,100" fill="#aac288"/>
+      <polygon points="518,105 492,142 528,135" fill="#829a62"/>
+      <polygon points="518,105 528,135 568,100" fill="#789260"/>
+      <polygon points="568,100 528,135 572,130" fill="#628050"/>
+      <polygon points="568,100 572,130 605,138" fill="#526840"/>
+      <polygon points="492,142 472,188 528,135" fill="#8aa268"/>
+      <polygon points="472,188 508,188 528,135" fill="#7a9058"/>
+      <polygon points="508,188 528,135 555,188" fill="#6a8048"/>
+      <polygon points="528,135 572,130 555,188" fill="#597040"/>
+      <polygon points="555,188 572,130 600,188" fill="#4a5e32"/>
+      <polygon points="572,130 605,138 600,188" fill="#3e5028"/>
+      <polygon points="600,188 605,138 622,188" fill="#334420"/>
+      <!-- lichen patches -->
+      <polygon points="545,68 536,88 550,84" fill="#cce0a8"/>
+      <polygon points="536,88 518,105 532,98" fill="#b8ce90"/>
+      <!-- exposed rock -->
+      <polygon points="528,135 540,122 548,132" fill="#9a9280"/>
+    </g>
+
+  </g>
+
+  <g id="front-micro-facets" stroke-linejoin="round" stroke-width=".7" pointer-events="none">
+    <polygon class="front-facet-light" style="--d:-.4s" points="8,138 36,164 22,188" fill="#b6cc92" opacity=".34"/>
+    <polygon class="front-facet-light" style="--d:-1.6s" points="42,132 74,160 65,188" fill="#a6bc82" opacity=".3"/>
+    <polygon class="front-facet-light" style="--d:-2.8s" points="88,128 116,160 108,188" fill="#789060" opacity=".26"/>
+    <polygon class="front-facet-light" style="--d:-.9s" points="168,125 202,156 185,188" fill="#d6b76a" opacity=".34"/>
+    <polygon class="front-facet-light" style="--d:-2.2s" points="205,118 242,156 232,188" fill="#bc9650" opacity=".3"/>
+    <polygon class="front-facet-light" style="--d:-3.4s" points="252,114 284,154 282,188" fill="#8a6834" opacity=".24"/>
+    <polygon class="front-facet-light" style="--d:-1.1s" points="335,130 370,158 350,188" fill="#82a9b8" opacity=".3"/>
+    <polygon class="front-facet-light" style="--d:-3s" points="372,122 410,156 400,188" fill="#5f8da8" opacity=".26"/>
+    <polygon class="front-facet-light" style="--d:-.2s" points="492,142 526,164 508,188" fill="#a4b87a" opacity=".32"/>
+    <polygon class="front-facet-light" style="--d:-2.6s" points="528,135 568,160 555,188" fill="#7c9660" opacity=".28"/>
+
+    <polygon points="30,102 55,66 44,132" fill="#fff5c8" opacity=".12"/>
+    <polygon points="195,85 222,48 206,142" fill="#fff0bc" opacity=".12"/>
+    <polygon points="362,90 388,52 374,150" fill="#eef8f8" opacity=".1"/>
+    <polygon points="518,105 545,68 530,150" fill="#fff5c8" opacity=".1"/>
+    <polygon points="248,80 272,123 252,114" fill="#5d4422" opacity=".14"/>
+    <polygon points="415,86 440,126 420,118" fill="#153a58" opacity=".13"/>
+  </g>
+
+  <g id="front-fold-lines" fill="none" stroke-linecap="round" pointer-events="none">
+    <path class="front-fold" d="M55,66L42,132L22,188" stroke="#eef8c8" stroke-width=".9" stroke-opacity=".42"/>
+    <path class="front-fold" d="M78,98L88,128L108,188" stroke="#354a28" stroke-width=".7" stroke-opacity=".28"/>
+    <path class="front-fold" d="M222,48L205,118L185,188" stroke="#ffedb8" stroke-width=".98" stroke-opacity=".44"/>
+    <path class="front-fold" d="M248,80L252,114L282,188" stroke="#5a3f1e" stroke-width=".72" stroke-opacity=".3"/>
+    <path class="front-fold" d="M388,52L372,122L350,188" stroke="#d8f2f8" stroke-width=".9" stroke-opacity=".38"/>
+    <path class="front-fold" d="M545,68L528,135L508,188" stroke="#eef8c8" stroke-width=".9" stroke-opacity=".4"/>
+    <path d="M8,138L42,132L88,128L118,134M168,125L205,118L252,114L285,120M335,130L372,122L420,118L452,124M492,142L528,135L572,130L605,138" stroke="#27351c" stroke-width=".68" stroke-opacity=".22"/>
+  </g>
+
+  <g id="front-glints" pointer-events="none">
+    <polygon class="front-glint" style="--d:-.1s" points="94,124 106,119 101,136" fill="url(#frontFoldHi)"/>
+    <polygon class="front-glint" style="--d:-1.2s" points="262,112 274,106 270,124" fill="url(#frontFoldHi)"/>
+    <polygon class="front-glint" style="--d:-2.8s" points="426,122 438,116 434,134" fill="url(#frontFoldHi)"/>
+    <polygon class="front-glint" style="--d:-3.7s" points="578,130 590,124 585,142" fill="url(#frontFoldHi)"/>
+    <polygon class="front-glint" style="--d:-2.1s" points="46,140 56,136 52,150" fill="url(#frontFoldHi)"/>
+  </g>
+
+  <g id="front-ground-lowpoly" stroke-linejoin="round" pointer-events="none">
+    <polygon class="front-ground-facet" style="--d:-.8s" points="-18,174 58,184 18,192 -18,192" fill="#789058" opacity=".42"/>
+    <polygon class="front-ground-facet" style="--d:-1.9s" points="58,184 126,172 104,192 18,192" fill="#9aae70" opacity=".38"/>
+    <polygon class="front-ground-facet" style="--d:-2.6s" points="126,172 198,181 196,192 104,192" fill="#738a58" opacity=".34"/>
+    <polygon class="front-ground-facet" style="--d:-.3s" points="198,181 282,191 196,192" fill="#b5a068" opacity=".24"/>
+    <polygon class="front-ground-facet" style="--d:-3.1s" points="282,191 340,170 356,192" fill="#7d9560" opacity=".38"/>
+    <polygon class="front-ground-facet" style="--d:-1.4s" points="340,170 418,179 356,192" fill="#a6ba78" opacity=".36"/>
+    <polygon class="front-ground-facet" style="--d:-2.2s" points="418,179 492,188 456,192" fill="#768d54" opacity=".32"/>
+    <polygon class="front-ground-facet" style="--d:-.7s" points="492,188 540,175 618,181 618,192 456,192" fill="#91a868" opacity=".36"/>
+  </g>
+
+  <!-- Organic ground strip with wavey edge -->
+  <path d="M-18,174C58,184 126,172 198,181C282,191 340,170 418,179C492,188 540,175 618,181V192H-18Z" fill="url(#frontGnd)"/>
+  <path d="M-18,174C58,184 126,172 198,181C282,191 340,170 418,179C492,188 540,175 618,181V192H-18Z" fill="url(#organicTex)" opacity=".42"/>
+  <g id="front-ground-lowpoly-top" stroke-linejoin="round" pointer-events="none">
+    <polygon class="front-ground-facet" style="--d:-.8s" points="-18,174 58,184 18,192 -18,192" fill="#5e7448" opacity=".24"/>
+    <polygon class="front-ground-facet" style="--d:-1.9s" points="58,184 126,172 104,192 18,192" fill="#c8dca0" opacity=".2"/>
+    <polygon class="front-ground-facet" style="--d:-2.6s" points="126,172 198,181 196,192 104,192" fill="#536b42" opacity=".2"/>
+    <polygon class="front-ground-facet" style="--d:-.3s" points="198,181 282,191 196,192" fill="#d4b66e" opacity=".16"/>
+    <polygon class="front-ground-facet" style="--d:-3.1s" points="282,191 340,170 356,192" fill="#4e6840" opacity=".22"/>
+    <polygon class="front-ground-facet" style="--d:-1.4s" points="340,170 418,179 356,192" fill="#c2d894" opacity=".18"/>
+    <polygon class="front-ground-facet" style="--d:-2.2s" points="418,179 492,188 456,192" fill="#526c40" opacity=".2"/>
+    <polygon class="front-ground-facet" style="--d:-.7s" points="492,188 540,175 618,181 618,192 456,192" fill="#bfd48c" opacity=".18"/>
+  </g>
+  <!-- Ground highlight ridge -->
+  <path d="M22,176C104,184 184,172 276,180C356,188 442,172 578,182" fill="none" stroke="#c8dca8" stroke-width="2.5" stroke-linecap="round" opacity=".35"/>
+</svg>

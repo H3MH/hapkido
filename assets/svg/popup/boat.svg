@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" id="boat-origami">
+  <defs>
+    <!-- === AGUA / CASCO AZUL === -->
+    <linearGradient id="b-hull-top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#cee8f7"/>
+      <stop offset="1"   stop-color="#5b9ec9"/>
+    </linearGradient>
+    <linearGradient id="b-hull-mid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#7ab8d8"/>
+      <stop offset="1"   stop-color="#2e6e9e"/>
+    </linearGradient>
+    <linearGradient id="b-hull-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#3d7ca8"/>
+      <stop offset="1"   stop-color="#174f78"/>
+    </linearGradient>
+    <linearGradient id="b-hull-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#1c5a84"/>
+      <stop offset="1"   stop-color="#0e3a58"/>
+    </linearGradient>
+
+    <!-- === VELA IZQUIERDA (blanca-crema) === -->
+    <linearGradient id="b-sail-l" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#eef5fb"/>
+      <stop offset="1"   stop-color="#b8d4e8"/>
+    </linearGradient>
+    <linearGradient id="b-sail-l-shd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#c0d8ec" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#4a7fa0" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- === VELA DERECHA (azul medio) === -->
+    <linearGradient id="b-sail-r" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#d4ecf7"/>
+      <stop offset="0.5" stop-color="#7db9d8"/>
+      <stop offset="1"   stop-color="#3a78a8"/>
+    </linearGradient>
+    <linearGradient id="b-sail-r-shd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#5a9abf" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#153f60" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- === VELA PEQUEÑA DELANTERA === -->
+    <linearGradient id="b-sail-sm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#fdf8ef"/>
+      <stop offset="1"   stop-color="#d8c99a"/>
+    </linearGradient>
+
+    <!-- === AGUA / OLA === -->
+    <linearGradient id="b-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#7fc4e0"/>
+      <stop offset="1"   stop-color="#3a8ab0" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- === DORADO mástil === -->
+    <linearGradient id="b-mast" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#8b6430"/>
+      <stop offset="0.5" stop-color="#c49a52"/>
+      <stop offset="1"   stop-color="#7a5528"/>
+    </linearGradient>
+
+    <!-- === CREMA bandera === -->
+    <linearGradient id="b-flag" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#fff7dc"/>
+      <stop offset="1"   stop-color="#e8c96a"/>
+    </linearGradient>
+
+    <!-- === SOMBRA SUAVE === -->
+    <filter id="b-shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.8"/>
+      <feOffset dx="0" dy="2" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.28"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="b-shadow-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5"/>
+      <feOffset dx="0" dy="3" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- === CLIP para olas === -->
+    <clipPath id="b-water-clip">
+      <rect x="0" y="76" width="120" height="24"/>
+    </clipPath>
+  </defs>
+
+  <!-- ============================================================
+       SOMBRA ELÍPTICA EN EL AGUA
+  ============================================================ -->
+  <ellipse cx="60" cy="92" rx="38" ry="3.5" fill="#1a4f72" opacity="0.18"/>
+
+  <!-- ============================================================
+       AGUA Y OLAS (low-poly con facetas)
+  ============================================================ -->
+  <!-- Cuerpo de agua principal -->
+  <polygon points="12,88 108,88 116,100 4,100" fill="url(#b-water)" opacity="0.85"/>
+  <!-- Faceta oscura derecha -->
+  <polygon points="78,88 108,88 116,100 90,100" fill="#2a6e94" opacity="0.45"/>
+  <!-- Ola delantera izquierda low-poly -->
+  <polygon points="4,86 28,82 42,86 22,90" fill="#a8daf0" opacity="0.7"/>
+  <!-- Ola delantera derecha low-poly -->
+  <polygon points="76,84 98,80 114,86 96,90" fill="#a8daf0" opacity="0.6"/>
+  <!-- Ola mini central -->
+  <polygon points="44,87 60,84 76,87 60,90" fill="#b8e2f5" opacity="0.55"/>
+  <!-- Reflejos de luz en el agua -->
+  <polygon points="30,89 40,87 45,89 35,91" fill="#d8f0fc" opacity="0.5"/>
+  <polygon points="72,88 82,86 88,88 78,90" fill="#d8f0fc" opacity="0.45"/>
+
+  <!-- ============================================================
+       CASCO — estilo origami facetado multi-panel
+  ============================================================ -->
+  <!-- Grupo principal del casco (filter sombra) -->
+  <g filter="url(#b-shadow-strong)">
+
+    <!-- Panel inferior / quilla (oscuro, da profundidad) -->
+    <polygon points="22,82 98,82 90,90 30,90" fill="url(#b-hull-bot)"/>
+
+    <!-- Panel lateral izquierdo (faceta más clara) -->
+    <polygon points="18,70 60,70 30,90 22,82" fill="url(#b-hull-top)"/>
+    <!-- Sombra lateral izquierda -->
+    <polygon points="18,70 40,70 28,82 22,82" fill="#4a90c0" opacity="0.3"/>
+
+    <!-- Panel lateral derecho (más oscuro) -->
+    <polygon points="60,70 102,70 98,82 30,90" fill="url(#b-hull-mid)"/>
+    <!-- Sombra lateral derecha profunda -->
+    <polygon points="80,70 102,70 98,82 70,82" fill="url(#b-hull-dark)" opacity="0.7"/>
+
+    <!-- Borde superior / cubierta (franja horizontal con doblez origami) -->
+    <polygon points="14,68 106,68 102,72 18,72" fill="#d8eef8"/>
+    <!-- Pliegue oscuro cubierta -->
+    <polygon points="60,68 106,68 102,72 60,72" fill="#9ec8e0" opacity="0.6"/>
+
+    <!-- Línea de flotación (franja blanca) -->
+    <polygon points="18,78 102,78 98,82 22,82" fill="#e8f5fc" opacity="0.55"/>
+
+    <!-- Proa izquierda (triángulo de punta) -->
+    <polygon points="14,68 18,70 18,72 10,74" fill="#b8d8ee"/>
+    <!-- Popa derecha (triángulo) -->
+    <polygon points="106,68 102,70 102,72 110,74" fill="#7aafce"/>
+
+    <!-- Pliegue central del casco (línea de doblez origami) -->
+    <line x1="60" y1="68" x2="60" y2="90" stroke="#2e6e9e" stroke-width="0.8" stroke-dasharray="2.5 2" opacity="0.5"/>
+
+    <!-- Detalles de pliegues adicionales en el casco -->
+    <line x1="35" y1="70" x2="25" y2="85" stroke="#3a80aa" stroke-width="0.5" opacity="0.4"/>
+    <line x1="85" y1="70" x2="95" y2="85" stroke="#1a5070" stroke-width="0.5" opacity="0.4"/>
+    <line x1="50" y1="68" x2="42" y2="82" stroke="#3a80aa" stroke-width="0.4" opacity="0.3"/>
+    <line x1="70" y1="68" x2="78" y2="82" stroke="#1a5070" stroke-width="0.4" opacity="0.3"/>
+
+  </g>
+
+  <!-- ============================================================
+       MÁSTIL
+  ============================================================ -->
+  <rect x="58.5" y="12" width="3" height="58" rx="1" fill="url(#b-mast)" filter="url(#b-shadow)"/>
+  <!-- Sombra del mástil -->
+  <rect x="61" y="20" width="1.5" height="50" rx="0.5" fill="#5a3a10" opacity="0.25"/>
+
+  <!-- ============================================================
+       PERCHA / BOTAVARA (horizontal) con pliegue origami
+  ============================================================ -->
+  <line x1="30" y1="52" x2="60" y2="68" stroke="#7a5528" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="60" y1="68" x2="90" y2="55" stroke="#7a5528" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- ============================================================
+       VELA IZQUIERDA — gran triángulo con múltiples facetas low-poly
+  ============================================================ -->
+  <g filter="url(#b-shadow)">
+    <!-- Cara principal izquierda -->
+    <polygon points="60,14 18,66 60,68" fill="url(#b-sail-l)"/>
+    <!-- Faceta superior (brillo) -->
+    <polygon points="60,14 18,66 40,40" fill="#ffffff" opacity="0.45"/>
+    <!-- Faceta inferior-izquierda (sombra) -->
+    <polygon points="40,40 18,66 38,66" fill="#8ab8d4" opacity="0.4"/>
+    <!-- Faceta media (pliegue) -->
+    <polygon points="60,14 40,40 52,54 60,50" fill="#cce4f4" opacity="0.5"/>
+    <!-- Sombra de pliegue -->
+    <polygon points="52,54 60,68 60,50" fill="url(#b-sail-l-shd)" opacity="0.7"/>
+    <!-- Línea de pliegue origami central -->
+    <line x1="60" y1="14" x2="38" y2="66" stroke="#5a8aaa" stroke-width="0.6" stroke-dasharray="2 2.5" opacity="0.5"/>
+    <!-- Pliegue secundario -->
+    <line x1="60" y1="30" x2="28" y2="64" stroke="#8ab8ce" stroke-width="0.4" opacity="0.35"/>
+    <!-- Contorno -->
+    <polygon points="60,14 18,66 60,68" fill="none" stroke="#2e6e9e" stroke-width="0.9" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ============================================================
+       VELA DERECHA — triángulo con facetas low-poly
+  ============================================================ -->
+  <g filter="url(#b-shadow)">
+    <!-- Cara principal derecha -->
+    <polygon points="60,18 102,64 60,68" fill="url(#b-sail-r)"/>
+    <!-- Faceta superior (brillo) -->
+    <polygon points="60,18 88,40 102,64 90,52" fill="#aad4ea" opacity="0.4"/>
+    <!-- Faceta inferior (sombra) -->
+    <polygon points="80,58 102,64 60,68" fill="url(#b-sail-r-shd)" opacity="0.6"/>
+    <!-- Faceta media pliegue -->
+    <polygon points="60,18 80,42 72,58 60,60" fill="#5a9abf" opacity="0.35"/>
+    <!-- Sombra interna derecha -->
+    <polygon points="90,52 102,64 82,62" fill="#1a5070" opacity="0.3"/>
+    <!-- Línea pliegue origami -->
+    <line x1="60" y1="18" x2="90" y2="66" stroke="#1a5078" stroke-width="0.6" stroke-dasharray="2 2.5" opacity="0.45"/>
+    <line x1="60" y1="34" x2="98" y2="62" stroke="#3a7098" stroke-width="0.4" opacity="0.3"/>
+    <!-- Contorno -->
+    <polygon points="60,18 102,64 60,68" fill="none" stroke="#1a5078" stroke-width="0.9" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ============================================================
+       VELA PEQUEÑA / FOQUE (delantera, estilo origami)
+  ============================================================ -->
+  <g opacity="0.92">
+    <polygon points="60,22 30,52 60,58" fill="url(#b-sail-sm)"/>
+    <!-- Faceta brillo -->
+    <polygon points="60,22 30,52 46,38" fill="#ffffff" opacity="0.55"/>
+    <!-- Faceta sombra borde -->
+    <polygon points="46,38 30,52 44,52" fill="#c8ac70" opacity="0.35"/>
+    <!-- Pliegue -->
+    <line x1="60" y1="22" x2="34" y2="52" stroke="#9a7c3a" stroke-width="0.5" stroke-dasharray="1.5 2" opacity="0.4"/>
+    <!-- Contorno -->
+    <polygon points="60,22 30,52 60,58" fill="none" stroke="#9a7c3a" stroke-width="0.7" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ============================================================
+       BANDERA en la punta del mástil (low-poly triangular)
+  ============================================================ -->
+  <g id="boat-flag">
+    <polygon points="60,12 78,17 60,22" fill="url(#b-flag)"/>
+    <!-- Faceta sombra bandera -->
+    <polygon points="60,17 78,17 60,22" fill="#c8a030" opacity="0.4"/>
+    <!-- Estrellita en la bandera -->
+    <polygon points="69,17 70.2,14.8 71.4,17 68.9,15.5 71.5,15.5" fill="#ffffff" opacity="0.9" transform="scale(0.7) translate(30,7)"/>
+    <!-- Contorno bandera -->
+    <polygon points="60,12 78,17 60,22" fill="none" stroke="#8a6020" stroke-width="0.6" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ============================================================
+       DETALLES EXTRA: ventanilla / ojo de buey
+  ============================================================ -->
+  <circle cx="44" cy="74" r="3.2" fill="#9acce2" stroke="#2e6e9e" stroke-width="0.8" opacity="0.9"/>
+  <circle cx="44" cy="74" r="1.6" fill="#d8f0fc" opacity="0.7"/>
+  <circle cx="43.2" cy="73.2" r="0.6" fill="#ffffff" opacity="0.9"/>
+
+  <!-- Ventanilla derecha -->
+  <circle cx="76" cy="74" r="3.2" fill="#7ab8d8" stroke="#1a5070" stroke-width="0.8" opacity="0.85"/>
+  <circle cx="76" cy="74" r="1.6" fill="#c0ddf0" opacity="0.65"/>
+  <circle cx="75.2" cy="73.2" r="0.6" fill="#ffffff" opacity="0.85"/>
+
+  <!-- ============================================================
+       ANCLA pequeña decorativa (low-poly)
+  ============================================================ -->
+  <g transform="translate(55,74)" opacity="0.55">
+    <line x1="0" y1="-5" x2="0" y2="4" stroke="#1a4060" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="-2.5" y1="-4" x2="2.5" y2="-4" stroke="#1a4060" stroke-width="1" stroke-linecap="round"/>
+    <path d="M-2.5,4 Q-4,2 -3,0" stroke="#1a4060" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <path d="M2.5,4 Q4,2 3,0" stroke="#1a4060" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="-5" r="1.2" fill="none" stroke="#1a4060" stroke-width="0.9"/>
+  </g>
+
+  <!-- ============================================================
+       CUERDA / ESTAY (origami detail)
+  ============================================================ -->
+  <line x1="60" y1="14" x2="14" y2="68" stroke="#9a7c3a" stroke-width="0.7" stroke-dasharray="1.5 3" opacity="0.5"/>
+  <line x1="60" y1="14" x2="106" y2="68" stroke="#7a5a28" stroke-width="0.7" stroke-dasharray="1.5 3" opacity="0.4"/>
+
+  <!-- ============================================================
+       DESTELLOS / BRILLOS en las velas (low-poly highlight)
+  ============================================================ -->
+  <polygon points="60,14 64,24 60,26" fill="#ffffff" opacity="0.6"/>
+  <polygon points="60,18 80,34 78,38 60,28" fill="#d8eef8" opacity="0.3"/>
+
+</svg>

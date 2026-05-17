@@ -1,0 +1,44 @@
+{
+  "8090000000": {
+    "nombre": "María González",
+    "acompanantesPermitidos": 2,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "8291112222": {
+    "nombre": "Carlos Pérez",
+    "acompanantesPermitidos": 1,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "8493334444": {
+    "nombre": "Laura Rodríguez",
+    "acompanantesPermitidos": 0,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "8095551234": {
+    "nombre": "Ana Martínez",
+    "acompanantesPermitidos": 3,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "678910967": {
+    "nombre": "Henry Mata",
+    "acompanantesPermitidos": 3,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "647243911": {
+    "nombre": "Solangy Rojas",
+    "acompanantesPermitidos": 3,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "demo": {
+    "nombre": "Invitada Especial",
+    "acompanantesPermitidos": 2,
+    "yaConfirmo": false,
+    "confirmacion": null
+  }
+}

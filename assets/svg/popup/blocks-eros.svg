@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 130">
+<defs>
+<style>
+@keyframes b-float1{0%,100%{transform:translateY(0px) rotate(0deg)}40%{transform:translateY(-5px) rotate(0.4deg)}70%{transform:translateY(-2px) rotate(-0.3deg)}}
+@keyframes b-float2{0%,100%{transform:translateY(0px) rotate(0deg)}35%{transform:translateY(-7px) rotate(-0.5deg)}65%{transform:translateY(-3px) rotate(0.4deg)}}
+@keyframes b-float3{0%,100%{transform:translateY(0px) rotate(0deg)}30%{transform:translateY(-4px) rotate(0.6deg)}60%{transform:translateY(-6px) rotate(-0.4deg)}}
+@keyframes b-float4{0%,100%{transform:translateY(0px) rotate(0deg)}45%{transform:translateY(-8px) rotate(-0.6deg)}75%{transform:translateY(-3px) rotate(0.5deg)}}
+@keyframes b-float5{0%,100%{transform:translateY(0px) rotate(0deg)}50%{transform:translateY(-5px) rotate(0.7deg)}80%{transform:translateY(-2px) rotate(-0.5deg)}}
+@keyframes b-shine{0%,100%{opacity:0.15}50%{opacity:0.55}}
+@keyframes b-twinkle{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+@keyframes b-pulse{0%,100%{opacity:0.18}50%{opacity:0.09}}
+#b-cube-E{animation:b-float1 4.2s ease-in-out infinite;transform-origin:50% 100%}
+#b-cube-R{animation:b-float2 3.8s ease-in-out infinite;transform-origin:50% 100%;animation-delay:0.6s}
+#b-cube-O{animation:b-float3 4.6s ease-in-out infinite;transform-origin:50% 100%;animation-delay:1.1s}
+#b-cube-S{animation:b-float4 3.5s ease-in-out infinite;transform-origin:50% 100%;animation-delay:0.3s}
+#b-cube-star{animation:b-float5 5.0s ease-in-out infinite;transform-origin:50% 100%;animation-delay:1.8s}
+.b-shine{animation:b-shine 3.2s ease-in-out infinite}
+.b-twinkle{animation:b-twinkle 2.4s ease-in-out infinite}
+.b-twinkle2{animation:b-twinkle 2.0s ease-in-out infinite;animation-delay:0.8s}
+.b-twinkle3{animation:b-twinkle 2.8s ease-in-out infinite;animation-delay:0.4s}
+.b-shadow{animation:b-pulse 4s ease-in-out infinite}
+</style>
+
+<!-- GRADIENTES — AZUL BEBÉ -->
+<linearGradient id="bFL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cce4f5"/><stop offset="1" stop-color="#6eaad4"/></linearGradient>
+<linearGradient id="bFR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4d8fb8"/><stop offset="1" stop-color="#1f5a82"/></linearGradient>
+<linearGradient id="bFT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f5fd"/><stop offset="0.5" stop-color="#a8d4ee"/><stop offset="1" stop-color="#6eaad4"/></linearGradient>
+<linearGradient id="bFT2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c0dff0"/><stop offset="1" stop-color="#5494be"/></linearGradient>
+
+<!-- GRADIENTES — SAGE / VERDE -->
+<linearGradient id="sFL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cce0bb"/><stop offset="1" stop-color="#729c5e"/></linearGradient>
+<linearGradient id="sFR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#547a42"/><stop offset="1" stop-color="#2e4e22"/></linearGradient>
+<linearGradient id="sFT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e4f0da"/><stop offset="0.5" stop-color="#aecf9a"/><stop offset="1" stop-color="#729c5e"/></linearGradient>
+<linearGradient id="sFT2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd6a8"/><stop offset="1" stop-color="#5a8a48"/></linearGradient>
+
+<!-- GRADIENTES — CREMA -->
+<linearGradient id="cFL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2dc"/><stop offset="1" stop-color="#c9a86c"/></linearGradient>
+<linearGradient id="cFR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#aa8844"/><stop offset="1" stop-color="#7a5e20"/></linearGradient>
+<linearGradient id="cFT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffaee"/><stop offset="0.5" stop-color="#ebd49c"/><stop offset="1" stop-color="#c9a86c"/></linearGradient>
+<linearGradient id="cFT2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0e0b0"/><stop offset="1" stop-color="#b89458"/></linearGradient>
+
+<!-- GRADIENTES — DORADO -->
+<linearGradient id="gFL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fce8c0"/><stop offset="1" stop-color="#c28830"/></linearGradient>
+<linearGradient id="gFR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a87020"/><stop offset="1" stop-color="#7a4c08"/></linearGradient>
+<linearGradient id="gFT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fef6d8"/><stop offset="0.5" stop-color="#e8c462"/><stop offset="1" stop-color="#c28830"/></linearGradient>
+<linearGradient id="gFT2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd48c"/><stop offset="1" stop-color="#b07c28"/></linearGradient>
+
+<!-- GRADIENTES — ROSA -->
+<linearGradient id="rFL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fce0e4"/><stop offset="1" stop-color="#de8896"/></linearGradient>
+<linearGradient id="rFR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c0606e"/><stop offset="1" stop-color="#8a3040"/></linearGradient>
+<linearGradient id="rFT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#feeff2"/><stop offset="0.5" stop-color="#f2b4bc"/><stop offset="1" stop-color="#de8896"/></linearGradient>
+
+<!-- SOMBRA SUELO -->
+<radialGradient id="gndSh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1a2e40" stop-opacity="0.28"/><stop offset="1" stop-color="#1a2e40" stop-opacity="0"/></radialGradient>
+
+<!-- HIGHLIGHT CARA SUPERIOR (brillo low-poly) -->
+<linearGradient id="topHL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.7"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+</defs>
+
+<!-- ============================================================
+     SOMBRAS DE SUELO — elipses planas bajo cada torre
+============================================================ -->
+<!-- Sombra torre izquierda (E arriba de O) -->
+<ellipse class="b-shadow" cx="58" cy="126" rx="40" ry="5" fill="url(#gndSh)"/>
+<!-- Sombra torre derecha (R arriba de S) -->
+<ellipse class="b-shadow" cx="152" cy="126" rx="40" ry="5" fill="url(#gndSh)" style="animation-delay:0.7s"/>
+<!-- Sombra cubo suelto star -->
+<ellipse class="b-shadow" cx="108" cy="118" rx="22" ry="3.5" fill="url(#gndSh)" style="animation-delay:1.4s"/>
+
+<!-- ============================================================
+     CUBO "O" — TORRE IZQUIERDA, NIVEL BAJO — CREMA
+     Isométrico: cara izquierda, cara derecha, cara superior
+     Cada cara subdividida en triángulos low-poly
+     Base translate(18, 74)
+============================================================ -->
+<g id="b-cube-O">
+  <!-- CARA IZQUIERDA — subdividida en 4 triángulos -->
+  <polygon points="18,100 18,74 46,82 46,108" fill="url(#cFL)" stroke="#b09458" stroke-width="0.7" stroke-linejoin="round"/>
+  <!-- tri facets izquierda -->
+  <polygon points="18,74 46,82 32,87" fill="#d4b878" opacity="0.38"/>
+  <polygon points="18,100 32,87 46,108" fill="#a88240" opacity="0.28"/>
+  <polygon points="18,74 18,100 32,87" fill="#fffaee" opacity="0.18"/>
+  <polygon points="32,87 46,82 46,108" fill="#9a7430" opacity="0.22"/>
+
+  <!-- CARA DERECHA — subdividida -->
+  <polygon points="46,82 74,74 74,100 46,108" fill="url(#cFR)" stroke="#b09458" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="46,82 74,74 60,78" fill="#c09050" opacity="0.3"/>
+  <polygon points="60,78 74,74 74,100" fill="#7a5220" opacity="0.35"/>
+  <polygon points="46,108 60,78 74,100" fill="#a07838" opacity="0.25"/>
+  <polygon points="46,82 46,108 60,78" fill="#d0a860" opacity="0.2"/>
+
+  <!-- CARA SUPERIOR — subdividida en 4 triángulos low-poly -->
+  <polygon points="18,74 46,66 74,74 46,82" fill="url(#cFT)" stroke="#b09458" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="18,74 46,66 32,70" fill="url(#topHL)" opacity="0.55" class="b-shine"/>
+  <polygon points="32,70 46,66 46,82" fill="#d4b070" opacity="0.25"/>
+  <polygon points="18,74 32,70 46,82" fill="#fffaee" opacity="0.15"/>
+  <polygon points="32,70 74,74 46,82" fill="url(#cFT2)" opacity="0.4"/>
+
+  <!-- Letra O en cara izquierda -->
+  <text x="24" y="96" font-family="Fraunces,serif" font-size="17" font-weight="700" fill="#fffaee" opacity="0.95" letter-spacing="0">O</text>
+  <!-- Luna en cara superior -->
+  <path d="M52,70 C52,68 54,67 55,68.5 C53.5,68.5 52.5,69.3 52,70Z" fill="#fff" opacity="0.8"/>
+  <path d="M52,70 C53,68.2 55.5,67.8 56,69.2 C54.8,68.8 53.2,69.2 52,70Z" fill="#fff" opacity="0.6"/>
+  <!-- Puntitos decorativos cara derecha -->
+  <circle cx="62" cy="88" r="1.5" fill="#fffaee" opacity="0.55"/>
+  <circle cx="68" cy="92" r="1" fill="#fffaee" opacity="0.4"/>
+  <circle cx="58" cy="95" r="1.2" fill="#fffaee" opacity="0.45"/>
+  <!-- Highlight esquina top-left cara superior -->
+  <polygon points="18,74 46,66 32,70" fill="#ffffff" opacity="0.22"/>
+</g>
+
+<!-- ============================================================
+     CUBO "E" — TORRE IZQUIERDA, NIVEL ALTO — SAGE
+     Base translate(18, 74) - 32px de altura = translate(18, 42)
+============================================================ -->
+<g id="b-cube-E">
+  <!-- Cara izquierda -->
+  <polygon points="18,68 18,42 46,50 46,76" fill="url(#sFL)" stroke="#4e7a3c" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="18,42 46,50 32,55" fill="#b8d4a8" opacity="0.35"/>
+  <polygon points="18,68 32,55 46,76" fill="#406030" opacity="0.28"/>
+  <polygon points="18,42 18,68 32,55" fill="#e8f0dc" opacity="0.18"/>
+  <polygon points="32,55 46,50 46,76" fill="#305024" opacity="0.22"/>
+  <!-- Cara derecha -->
+  <polygon points="46,50 74,42 74,68 46,76" fill="url(#sFR)" stroke="#4e7a3c" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="46,50 74,42 60,46" fill="#8ab87a" opacity="0.3"/>
+  <polygon points="60,46 74,42 74,68" fill="#284820" opacity="0.38"/>
+  <polygon points="46,76 60,46 74,68" fill="#407030" opacity="0.25"/>
+  <polygon points="46,50 46,76 60,46" fill="#a0c890" opacity="0.2"/>
+  <!-- Cara superior -->
+  <polygon points="18,42 46,34 74,42 46,50" fill="url(#sFT)" stroke="#4e7a3c" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="18,42 46,34 32,38" fill="url(#topHL)" opacity="0.6" class="b-shine" style="animation-delay:0.5s"/>
+  <polygon points="32,38 46,34 46,50" fill="#608850" opacity="0.25"/>
+  <polygon points="18,42 32,38 46,50" fill="#e0eeD8" opacity="0.15"/>
+  <polygon points="32,38 74,42 46,50" fill="url(#sFT2)" opacity="0.4"/>
+  <!-- Letra E -->
+  <text x="24" y="65" font-family="Fraunces,serif" font-size="17" font-weight="700" fill="#e8f2e0" opacity="0.95">E</text>
+  <!-- Estrella en cara superior -->
+  <polygon class="b-twinkle" points="50,40 51.2,43 54.5,43 52,45 53,48 50,46 47,48 48,45 45.5,43 48.8,43" fill="#fffaee" opacity="0.9" transform="scale(0.7) translate(22,18)"/>
+  <!-- Líneas faceta cara derecha -->
+  <line x1="46" y1="50" x2="74" y2="68" stroke="#285020" stroke-width="0.4" opacity="0.3"/>
+  <line x1="60" y1="46" x2="60" y2="72" stroke="#285020" stroke-width="0.3" opacity="0.2"/>
+  <!-- Highlight -->
+  <polygon points="18,42 46,34 32,38" fill="#ffffff" opacity="0.25"/>
+</g>
+
+<!-- ============================================================
+     CUBO "S" — TORRE DERECHA, NIVEL BAJO — DORADO
+     Base translate(112, 82)
+============================================================ -->
+<g id="b-cube-S">
+  <!-- Cara izquierda -->
+  <polygon points="112,108 112,82 140,90 140,116" fill="url(#gFL)" stroke="#9a7428" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="112,82 140,90 126,95" fill="#e8cc80" opacity="0.38"/>
+  <polygon points="112,108 126,95 140,116" fill="#906010" opacity="0.28"/>
+  <polygon points="112,82 112,108 126,95" fill="#fef8e0" opacity="0.18"/>
+  <polygon points="126,95 140,90 140,116" fill="#805010" opacity="0.22"/>
+  <!-- Cara derecha -->
+  <polygon points="140,90 168,82 168,108 140,116" fill="url(#gFR)" stroke="#9a7428" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="140,90 168,82 154,86" fill="#d0a840" opacity="0.3"/>
+  <polygon points="154,86 168,82 168,108" fill="#603808" opacity="0.38"/>
+  <polygon points="140,116 154,86 168,108" fill="#906018" opacity="0.25"/>
+  <polygon points="140,90 140,116 154,86" fill="#d8b450" opacity="0.2"/>
+  <!-- Cara superior -->
+  <polygon points="112,82 140,74 168,82 140,90" fill="url(#gFT)" stroke="#9a7428" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="112,82 140,74 126,78" fill="url(#topHL)" opacity="0.62" class="b-shine" style="animation-delay:1.0s"/>
+  <polygon points="126,78 140,74 140,90" fill="#d0a030" opacity="0.28"/>
+  <polygon points="112,82 126,78 140,90" fill="#fef8e0" opacity="0.15"/>
+  <polygon points="126,78 168,82 140,90" fill="url(#gFT2)" opacity="0.42"/>
+  <!-- Letra S -->
+  <text x="118" y="104" font-family="Fraunces,serif" font-size="17" font-weight="700" fill="#fffaee" opacity="0.95">S</text>
+  <!-- Corazón en cara superior -->
+  <path d="M148,78 C148,76.5 149.5,75.5 150.5,77 C151.5,75.5 153,76.5 153,78 C153,80 150.5,82 150.5,82 C150.5,82 148,80 148,78Z" fill="#fff" opacity="0.8"/>
+  <!-- Facetas cara derecha -->
+  <line x1="154" y1="86" x2="154" y2="112" stroke="#602808" stroke-width="0.35" opacity="0.25"/>
+  <line x1="140" y1="90" x2="168" y2="108" stroke="#602808" stroke-width="0.3" opacity="0.2"/>
+  <!-- Puntos cara izq -->
+  <circle cx="122" cy="96" r="1.4" fill="#fffaee" opacity="0.5"/>
+  <circle cx="128" cy="103" r="1" fill="#fffaee" opacity="0.4"/>
+  <!-- Highlight -->
+  <polygon points="112,82 140,74 126,78" fill="#ffffff" opacity="0.25"/>
+</g>
+
+<!-- ============================================================
+     CUBO "R" — TORRE DERECHA, NIVEL ALTO — AZUL
+     Base translate(112, 82) - 32px = translate(112, 50)
+============================================================ -->
+<g id="b-cube-R">
+  <!-- Cara izquierda -->
+  <polygon points="112,76 112,50 140,58 140,84" fill="url(#bFL)" stroke="#2e6890" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="112,50 140,58 126,63" fill="#b0d8f0" opacity="0.38"/>
+  <polygon points="112,76 126,63 140,84" fill="#1c4e6c" opacity="0.28"/>
+  <polygon points="112,50 112,76 126,63" fill="#e8f6fe" opacity="0.18"/>
+  <polygon points="126,63 140,58 140,84" fill="#144060" opacity="0.22"/>
+  <!-- Cara derecha -->
+  <polygon points="140,58 168,50 168,76 140,84" fill="url(#bFR)" stroke="#2e6890" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="140,58 168,50 154,54" fill="#6aaace" opacity="0.32"/>
+  <polygon points="154,54 168,50 168,76" fill="#103048" opacity="0.4"/>
+  <polygon points="140,84 154,54 168,76" fill="#1e5878" opacity="0.28"/>
+  <polygon points="140,58 140,84 154,54" fill="#88c0e0" opacity="0.2"/>
+  <!-- Cara superior — 4 triángulos facetados -->
+  <polygon points="112,50 140,42 168,50 140,58" fill="url(#bFT)" stroke="#2e6890" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="112,50 140,42 126,46" fill="url(#topHL)" opacity="0.65" class="b-shine" style="animation-delay:1.5s"/>
+  <polygon points="126,46 140,42 140,58" fill="#4898c8" opacity="0.28"/>
+  <polygon points="112,50 126,46 140,58" fill="#d8eefc" opacity="0.15"/>
+  <polygon points="126,46 168,50 140,58" fill="url(#bFT2)" opacity="0.4"/>
+  <!-- Letra R -->
+  <text x="118" y="73" font-family="Fraunces,serif" font-size="17" font-weight="700" fill="#e8f5fd" opacity="0.95">R</text>
+  <!-- Estrella en cara superior -->
+  <polygon class="b-twinkle2" points="148,46 149,48.5 152,48.5 149.8,50 150.7,52.5 148,51 145.3,52.5 146.2,50 144,48.5 147,48.5" fill="#fffaee" opacity="0.9" transform="scale(0.72) translate(58,16)"/>
+  <!-- Highlight superior izq -->
+  <polygon points="112,50 140,42 126,46" fill="#ffffff" opacity="0.28"/>
+  <!-- Líneas internas cara der -->
+  <line x1="154" y1="54" x2="154" y2="80" stroke="#103048" stroke-width="0.35" opacity="0.28"/>
+</g>
+
+<!-- ============================================================
+     CUBO PEQUEÑO "★" — SUELTO, CENTRO ALTO — ROSA
+     Base translate(78, 58)  (cubo más pequeño, 28px)
+============================================================ -->
+<g id="b-cube-star">
+  <!-- Cara izquierda -->
+  <polygon points="78,82 78,60 102,67 102,89" fill="url(#rFL)" stroke="#b05868" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="78,60 102,67 90,73.5" fill="#f8c0c8" opacity="0.35"/>
+  <polygon points="78,82 90,73.5 102,89" fill="#802840" opacity="0.28"/>
+  <polygon points="78,60 78,82 90,73.5" fill="#fef0f2" opacity="0.18"/>
+  <polygon points="90,73.5 102,67 102,89" fill="#701830" opacity="0.22"/>
+  <!-- Cara derecha -->
+  <polygon points="102,67 126,60 126,82 102,89" fill="url(#rFR)" stroke="#b05868" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="102,67 126,60 114,63.5" fill="#e090a0" opacity="0.3"/>
+  <polygon points="114,63.5 126,60 126,82" fill="#602030" opacity="0.38"/>
+  <polygon points="102,89 114,63.5 126,82" fill="#902840" opacity="0.25"/>
+  <polygon points="102,67 102,89 114,63.5" fill="#f0a0b0" opacity="0.2"/>
+  <!-- Cara superior -->
+  <polygon points="78,60 102,53 126,60 102,67" fill="url(#rFT)" stroke="#b05868" stroke-width="0.7" stroke-linejoin="round"/>
+  <polygon points="78,60 102,53 90,56.5" fill="url(#topHL)" opacity="0.65" class="b-shine" style="animation-delay:2.0s"/>
+  <polygon points="90,56.5 102,53 102,67" fill="#c06070" opacity="0.3"/>
+  <polygon points="78,60 90,56.5 102,67" fill="#fef0f2" opacity="0.15"/>
+  <polygon points="90,56.5 126,60 102,67" fill="#e08898" opacity="0.35"/>
+  <!-- Estrella en cara izquierda -->
+  <polygon class="b-twinkle3" points="84,72 85.2,75.5 89,75.5 86,77.5 87.2,81 84,79 80.8,81 82,77.5 79,75.5 82.8,75.5" fill="#fff" opacity="0.9"/>
+  <!-- Mini estrella en cara superior -->
+  <polygon points="104,58 104.8,60 107,60 105.4,61.2 106,63.2 104,62 102,63.2 102.6,61.2 101,60 103.2,60" fill="#fff" opacity="0.75"/>
+  <!-- Highlight -->
+  <polygon points="78,60 102,53 90,56.5" fill="#ffffff" opacity="0.28"/>
+  <!-- Puntitos cara derecha -->
+  <circle cx="116" cy="70" r="1.2" fill="#fef0f2" opacity="0.5"/>
+  <circle cx="120" cy="76" r="0.9" fill="#fef0f2" opacity="0.4"/>
+</g>
+
+<!-- ============================================================
+     PEQUEÑOS DETALLES FLOTANTES — estrellas y partículas
+============================================================ -->
+<!-- Estrellita dorada suelta arriba-izq -->
+<polygon class="b-twinkle" points="8,28 9.5,32.5 14,32.5 10.5,35 12,39.5 8,37 4,39.5 5.5,35 2,32.5 6.5,32.5" fill="#e8c462" opacity="0.85" transform="scale(0.6) translate(5,0)"/>
+<!-- Estrellita azul suelta arriba-der -->
+<polygon class="b-twinkle2" points="208,22 209.2,25.8 213.2,25.8 210,28 211.2,31.8 208,29.5 204.8,31.8 206,28 202.8,25.8 206.8,25.8" fill="#7fb4d8" opacity="0.8" transform="scale(0.55) translate(170,5)"/>
+<!-- Puntitos de confeti pequeño -->
+<circle cx="14" cy="50" r="2.5" fill="#e8c462" opacity="0.55"/>
+<circle cx="205" cy="55" r="2" fill="#729c5e" opacity="0.55"/>
+<circle cx="10" cy="70" r="1.8" fill="#6eaad4" opacity="0.5"/>
+<circle cx="208" cy="75" r="1.5" fill="#de8896" opacity="0.5"/>
+<!-- Mini triángulos confeti -->
+<polygon points="30,18 33,24 27,24" fill="#6eaad4" opacity="0.5"/>
+<polygon points="190,30 193,36 187,36" fill="#c9a86c" opacity="0.5"/>
+<polygon points="10,36 13,41 7,41" fill="#de8896" opacity="0.45"/>
+
+</svg>

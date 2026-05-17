@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 116">
+  <defs>
+    <style>
+      #rattle-lowpoly{
+        transform-box:fill-box;
+        transform-origin:50% 82%;
+      }
+      #rattle-beads{
+        transform-box:fill-box;
+        transform-origin:50% 50%;
+        animation:rattleBeads 1.12s cubic-bezier(.45,.02,.24,1) infinite;
+      }
+      #rattle-sparkles polygon,
+      #rattle-sparkles path{
+        transform-box:fill-box;
+        transform-origin:50% 50%;
+        animation:rattleSparkle 2.35s ease-in-out infinite;
+      }
+      #rattle-sparkles .s2{ animation-delay:.42s; }
+      #rattle-sparkles .s3{ animation-delay:.88s; }
+      #rattle-sparkles .s4{ animation-delay:1.24s; }
+      #rattle-face-shine{
+        animation:rattleSheen 2.9s ease-in-out infinite;
+      }
+      @keyframes rattleBeads{
+        0%,100%{ transform:translate(0,0) rotate(0deg); }
+        18%{ transform:translate(1.9px,-1.1px) rotate(8deg); }
+        34%{ transform:translate(-1.7px,.9px) rotate(-7deg); }
+        52%{ transform:translate(1.1px,1.4px) rotate(5deg); }
+        70%{ transform:translate(-.8px,-.7px) rotate(-3deg); }
+      }
+      @keyframes rattleSparkle{
+        0%,100%{ opacity:.2; transform:scale(.72) rotate(-8deg); }
+        45%{ opacity:.92; transform:scale(1.08) rotate(10deg); }
+        72%{ opacity:.48; transform:scale(.9) rotate(18deg); }
+      }
+      @keyframes rattleSheen{
+        0%,100%{ opacity:.18; transform:translateX(-2px); }
+        42%{ opacity:.52; transform:translateX(1.5px); }
+        70%{ opacity:.28; transform:translateX(2.5px); }
+      }
+      @media (prefers-reduced-motion: reduce){
+        #rattle-beads,
+        #rattle-sparkles polygon,
+        #rattle-sparkles path,
+        #rattle-face-shine{
+          animation:none;
+        }
+      }
+    </style>
+
+    <linearGradient id="rp-cream-top" x1="15" y1="6" x2="55" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset=".46" stop-color="#f2dfad"/>
+      <stop offset="1" stop-color="#b99356"/>
+    </linearGradient>
+    <linearGradient id="rp-cream-mid" x1="7" y1="14" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffdf5"/>
+      <stop offset=".55" stop-color="#ead49f"/>
+      <stop offset="1" stop-color="#a98247"/>
+    </linearGradient>
+    <linearGradient id="rp-cream-shadow" x1="20" y1="10" x2="61" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d9bd7c" stop-opacity=".05"/>
+      <stop offset=".55" stop-color="#b79458" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#735426" stop-opacity=".82"/>
+    </linearGradient>
+    <linearGradient id="rp-blue" x1="18" y1="22" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edf8ff"/>
+      <stop offset=".48" stop-color="#9ec8e6"/>
+      <stop offset="1" stop-color="#3d6f95"/>
+    </linearGradient>
+    <linearGradient id="rp-blue-dark" x1="24" y1="20" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7ea5c0"/>
+      <stop offset="1" stop-color="#2b5b7d"/>
+    </linearGradient>
+    <linearGradient id="rp-sage" x1="12" y1="21" x2="54" y2="67" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edf3df"/>
+      <stop offset=".5" stop-color="#b8c5a8"/>
+      <stop offset="1" stop-color="#718464"/>
+    </linearGradient>
+    <linearGradient id="rp-gold" x1="18" y1="16" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff0bf"/>
+      <stop offset=".48" stop-color="#d4a960"/>
+      <stop offset="1" stop-color="#8a642d"/>
+    </linearGradient>
+    <linearGradient id="rp-handle" x1="24" y1="60" x2="47" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0d0a1"/>
+      <stop offset=".55" stop-color="#c79a62"/>
+      <stop offset="1" stop-color="#795226"/>
+    </linearGradient>
+    <linearGradient id="rp-handle-side" x1="35" y1="61" x2="48" y2="106" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3824c" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#5d3b1d" stop-opacity=".76"/>
+    </linearGradient>
+    <radialGradient id="rp-bead-blue" cx="35%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#f3fbff"/>
+      <stop offset=".52" stop-color="#8ec1e1"/>
+      <stop offset="1" stop-color="#34698e"/>
+    </radialGradient>
+    <radialGradient id="rp-bead-gold" cx="35%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#fff4c7"/>
+      <stop offset=".5" stop-color="#d9ad5e"/>
+      <stop offset="1" stop-color="#8a642d"/>
+    </radialGradient>
+    <radialGradient id="rp-bead-sage" cx="35%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#f2f6e6"/>
+      <stop offset=".5" stop-color="#b8c5a8"/>
+      <stop offset="1" stop-color="#66785a"/>
+    </radialGradient>
+    <radialGradient id="rp-glow" cx="38%" cy="24%" r="75%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".7"/>
+      <stop offset=".56" stop-color="#ffffff" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rp-soft-shadow" x="-26%" y="-22%" width="152%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.8"/>
+      <feOffset dx="0" dy="2.2" result="off"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope=".32"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="rp-inner-shadow" x="-10%" y="-18%" width="120%" height="136%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation=".7" result="ringBlur"/>
+      <feOffset in="ringBlur" dx=".6" dy="1" result="ringOffset"/>
+      <feComponentTransfer in="ringOffset" result="ringShadow">
+        <feFuncA type="linear" slope=".28"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="ringShadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="rp-handle-grain" x="0" y="0" width="5" height="7" patternUnits="userSpaceOnUse">
+      <path d="M1 0.5 4 3.5M0 5.5 3 7" fill="none" stroke="#735426" stroke-width=".35" opacity=".36"/>
+    </pattern>
+  </defs>
+
+  <ellipse cx="36" cy="110" rx="18" ry="3.4" fill="#2f2419" opacity=".15"/>
+
+  <g id="rattle-lowpoly" filter="url(#rp-soft-shadow)">
+    <!-- Aro de union superior, como pieza de papel doblado -->
+    <g id="rattle-neck">
+      <polygon points="27,51 45,51 48,61 24,61" fill="url(#rp-gold)" stroke="#80602f" stroke-width=".9" stroke-linejoin="round"/>
+      <polygon points="36,51 45,51 48,61 36,58" fill="url(#rp-cream-shadow)" opacity=".7"/>
+      <polygon points="27,51 36,51 36,58 24,61" fill="#fff4cc" opacity=".34"/>
+      <path d="M25 57.8 C31 60.5 41.5 60.3 47 57.8" fill="none" stroke="#775829" stroke-width=".6" opacity=".5"/>
+    </g>
+
+    <!-- Cabeza transparente facetada -->
+    <g id="rattle-head">
+      <polygon points="36,3.5 53.5,8.8 65,21.5 66.5,38 58.5,53.8 44,64 27.8,64 13.5,53.5 5.5,38 7,21.5 18.7,8.8"
+               fill="url(#rp-cream-mid)" stroke="#8f723e" stroke-width="1.15" stroke-linejoin="round"/>
+
+      <!-- Facetas principales -->
+      <polygon points="36,3.5 53.5,8.8 46,23 36,20" fill="#fff7df" opacity=".78"/>
+      <polygon points="18.7,8.8 36,3.5 36,20 25,23" fill="#fffdf5" opacity=".58"/>
+      <polygon points="53.5,8.8 65,21.5 54,29 46,23" fill="#d7b770" opacity=".72"/>
+      <polygon points="7,21.5 18.7,8.8 25,23 17,30" fill="#f7e7bc" opacity=".8"/>
+      <polygon points="25,23 36,20 34,34 20,36 17,30" fill="#fff4d5" opacity=".44"/>
+      <polygon points="36,20 46,23 53,36 38,35 34,34" fill="#e3c27e" opacity=".38"/>
+      <polygon points="54,29 65,21.5 66.5,38 56,43 53,36" fill="#b9904e" opacity=".54"/>
+      <polygon points="5.5,38 7,21.5 17,30 20,36 15,45" fill="#ead39d" opacity=".6"/>
+      <polygon points="15,45 20,36 34,34 32,50 27.8,64 13.5,53.5" fill="#f7e2a9" opacity=".54"/>
+      <polygon points="38,35 53,36 56,43 44,64 39,50" fill="#a98247" opacity=".43"/>
+      <polygon points="32,50 39,50 44,64 27.8,64" fill="#d0ae68" opacity=".5"/>
+      <polygon points="56,43 66.5,38 58.5,53.8 44,64" fill="#7e5c2e" opacity=".34"/>
+
+      <!-- Lineas de plegado low-poly -->
+      <path d="M36 3.5 36 20 34 34 32 50 27.8 64M36 20 46 23 54 29 53 36 56 43M18.7 8.8 25 23 17 30 20 36 15 45M7 21.5 17 30M65 21.5 54 29M5.5 38 15 45 13.5 53.5M66.5 38 56 43 58.5 53.8M20 36 34 34 38 35 53 36M32 50 39 50 44 64"
+            fill="none" stroke="#8a6a3a" stroke-width=".48" stroke-linecap="round" stroke-linejoin="round" opacity=".48"/>
+
+      <ellipse cx="34.5" cy="34" rx="24.5" ry="24" fill="url(#rp-glow)" opacity=".58"/>
+      <path id="rattle-face-shine" d="M19 14.5 C13 22.4 11.8 36 16.5 45.4 C20.2 37.4 22.6 26.2 28.6 17.7 C25.6 15.8 22.4 14.8 19 14.5Z"
+            fill="#fffdf8" opacity=".36"/>
+    </g>
+
+    <!-- Cuentas internas -->
+    <g id="rattle-beads">
+      <circle cx="25" cy="33" r="4.3" fill="url(#rp-bead-blue)" stroke="#2f658a" stroke-width=".62"/>
+      <polygon points="22.5,30.2 25,28.7 28.6,32.1 25.2,37.2" fill="#ffffff" opacity=".22"/>
+      <circle cx="45.2" cy="32.5" r="3.7" fill="url(#rp-bead-gold)" stroke="#825f28" stroke-width=".58"/>
+      <polygon points="43,30.1 45,29 48.1,31.7 45.6,35.8" fill="#fff8d6" opacity=".34"/>
+      <circle cx="35.8" cy="43.2" r="3.35" fill="url(#rp-bead-sage)" stroke="#5f7354" stroke-width=".55"/>
+      <polygon points="33.7,41.1 35.8,39.9 38.5,42.4 36,46.4" fill="#ffffff" opacity=".24"/>
+      <circle cx="50.3" cy="44.2" r="2.45" fill="url(#rp-bead-blue)" stroke="#2f658a" stroke-width=".48" opacity=".9"/>
+      <circle cx="21.2" cy="47" r="2.35" fill="url(#rp-bead-gold)" stroke="#825f28" stroke-width=".45" opacity=".9"/>
+      <path d="M20.5 39.2 C29 34.8 42.5 34.2 52 39.6" fill="none" stroke="#8f723e" stroke-width=".42" stroke-dasharray="1.4 2" opacity=".35"/>
+    </g>
+
+    <!-- Estrella frontal construida con facetas -->
+    <g id="rattle-star">
+      <polygon points="36,20.5 40.2,31 51.4,31.4 42.8,38.7 45.7,49.6 36,43.6 26.2,49.6 29.2,38.7 20.6,31.4 31.8,31"
+               fill="url(#rp-blue)" stroke="#2f658a" stroke-width=".9" stroke-linejoin="round"/>
+      <polygon points="36,20.5 40.2,31 36,35 31.8,31" fill="#eaf7ff" opacity=".65"/>
+      <polygon points="40.2,31 51.4,31.4 42.8,38.7 36,35" fill="#72a9ca" opacity=".42"/>
+      <polygon points="36,35 42.8,38.7 45.7,49.6 36,43.6" fill="url(#rp-blue-dark)" opacity=".62"/>
+      <polygon points="36,35 36,43.6 26.2,49.6 29.2,38.7" fill="#9ec8e6" opacity=".45"/>
+      <polygon points="20.6,31.4 31.8,31 36,35 29.2,38.7" fill="#c9e5f6" opacity=".42"/>
+      <path d="M36 20.5 36 43.6M31.8 31 42.8 38.7M40.2 31 29.2 38.7" fill="none" stroke="#2d6388" stroke-width=".35" opacity=".55"/>
+    </g>
+
+    <!-- Mango facetado -->
+    <g id="rattle-handle">
+      <polygon points="27.5,61 44.5,61 48.5,97.5 41.8,107.5 30.2,107.5 23.5,97.5"
+               fill="url(#rp-handle)" stroke="#5d452c" stroke-width="1.05" stroke-linejoin="round"/>
+      <polygon points="36,61 44.5,61 48.5,97.5 41.8,107.5 37.3,94" fill="url(#rp-handle-side)" opacity=".82"/>
+      <polygon points="27.5,61 36,61 34.8,94 30.2,107.5 23.5,97.5" fill="#f1d0a0" opacity=".34"/>
+      <polygon points="30.2,68 42.6,68 43.3,73.8 28.8,73.8" fill="#efd0a3" opacity=".48"/>
+      <polygon points="29.2,79 44,79 44.6,84.8 27.8,84.8" fill="#9a6c39" opacity=".34"/>
+      <polygon points="28.2,90 45.2,90 46,95.8 26.7,95.8" fill="#f4d7a8" opacity=".35"/>
+      <path d="M28.4 67.8 H43.5M27.2 78.9 H44.6M25.8 90 H46.1" fill="none" stroke="#5d452c" stroke-width=".45" opacity=".38"/>
+      <path d="M29 63.5 25.2 97.3M36 62 35.2 105.2M43.4 63.5 46.5 97.3" fill="none" stroke="#6b4824" stroke-width=".36" opacity=".42"/>
+      <polygon points="27.5,61 44.5,61 48.5,97.5 41.8,107.5 30.2,107.5 23.5,97.5"
+               fill="url(#rp-handle-grain)" opacity=".42"/>
+    </g>
+
+    <!-- Aro inferior con biseles -->
+    <g id="rattle-ring" filter="url(#rp-inner-shadow)">
+      <ellipse cx="36" cy="101.5" rx="14.7" ry="6.1" fill="url(#rp-gold)" stroke="#755629" stroke-width=".95"/>
+      <ellipse cx="36" cy="101.4" rx="9.2" ry="3.1" fill="#8a642d" opacity=".48"/>
+      <path d="M22.4 100 C28.5 104.7 44.1 104.9 49.4 99.9" fill="none" stroke="#fff3c9" stroke-width="1" opacity=".45"/>
+      <path d="M25.4 103.6 C31.8 107.4 43.5 106.8 48.4 102.8" fill="none" stroke="#60431e" stroke-width=".65" opacity=".42"/>
+      <polygon points="24.3,99.5 34.2,96.3 31.7,101.1 23.1,103" fill="#fff0bf" opacity=".34"/>
+      <polygon points="40.8,96.6 49.7,99.4 46.8,104.2 38.3,101.5" fill="#8a642d" opacity=".34"/>
+    </g>
+
+    <!-- Detalles alrededor de la cabeza -->
+    <g id="rattle-sparkles">
+      <polygon class="s1" points="12.5,11.6 14,15.5 18,15.8 15,18.3 15.8,22.2 12.5,20.1 9,22.2 10,18.3 6.9,15.8 10.9,15.5"
+               fill="url(#rp-gold)" stroke="#8a642d" stroke-width=".35" stroke-linejoin="round"/>
+      <polygon class="s2" points="56,5 57.1,8.4 60.6,8.8 57.9,10.9 58.7,14.5 56,12.6 53.1,14.5 54,10.9 51.2,8.8 54.8,8.4"
+               fill="url(#rp-blue)" stroke="#2f658a" stroke-width=".32" stroke-linejoin="round"/>
+      <path class="s3" d="M55.2 57.2 57.1 61.5 61.7 62.1 58.2 65 59.2 69.4 55.2 67 51.2 69.4 52.3 65 48.8 62.1 53.3 61.5Z"
+            fill="url(#rp-sage)" stroke="#66785a" stroke-width=".35" stroke-linejoin="round"/>
+      <polygon class="s4" points="8.5,60.7 9.7,63.7 13,63.9 10.5,66 11.1,69.2 8.5,67.5 5.7,69.2 6.5,66 3.9,63.9 7.2,63.7"
+               fill="url(#rp-cream-top)" stroke="#8f723e" stroke-width=".32" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

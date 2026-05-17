@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 96" preserveAspectRatio="xMidYMid meet" role="img">
+  <defs>
+    <linearGradient id="rightTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".5" stop-color="#f1f7fa"/>
+      <stop offset="1" stop-color="#c7d5df"/>
+    </linearGradient>
+    <linearGradient id="rightBlue" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5fbff"/>
+      <stop offset=".58" stop-color="#d7e4ec"/>
+      <stop offset="1" stop-color="#9fb3c1"/>
+    </linearGradient>
+    <linearGradient id="rightWarm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8e9"/>
+      <stop offset=".56" stop-color="#edf4f7"/>
+      <stop offset="1" stop-color="#bccbd6"/>
+    </linearGradient>
+    <linearGradient id="rightDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c8d6df"/>
+      <stop offset="1" stop-color="#7e93a4"/>
+    </linearGradient>
+    <pattern id="rightFiber" width="13" height="13" patternUnits="userSpaceOnUse">
+      <path d="M2 2h1M7 4h2M11 9h1M4 12h2" stroke="#7f95a5" stroke-width=".42" opacity=".23"/>
+      <path d="M1 8h2M9 1h1" stroke="#fff" stroke-width=".42" opacity=".46"/>
+    </pattern>
+    <filter id="rightLift" x="-14%" y="-24%" width="128%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#5a7184" flood-opacity=".2"/>
+    </filter>
+    <clipPath id="rightShape">
+      <path d="M8 61 22 43 38 41 48 24 67 17 87 21 102 10 125 19 137 35 153 45 158 62 145 76 118 78 99 72 76 84 55 76 31 80 14 72Z"/>
+    </clipPath>
+  </defs>
+
+  <g filter="url(#rightLift)" clip-path="url(#rightShape)" stroke="#9aadb9" stroke-width="1" stroke-linejoin="round">
+    <path d="M8 61 22 43 38 41 48 24 67 17 87 21 102 10 125 19 137 35 153 45 158 62 145 76 118 78 99 72 76 84 55 76 31 80 14 72Z" fill="url(#rightTop)"/>
+
+    <polygon points="8,61 22,43 38,41 34,63 14,72" fill="url(#rightWarm)"/>
+    <polygon points="22,43 48,24 67,17 62,47 34,63 38,41" fill="#fbfdff"/>
+    <polygon points="34,63 62,47 76,84 55,76 31,80 14,72" fill="url(#rightBlue)" opacity=".9"/>
+    <polygon points="67,17 87,21 102,10 97,45 62,47" fill="url(#rightTop)"/>
+    <polygon points="62,47 97,45 99,72 76,84" fill="#e0eaf1"/>
+    <polygon points="97,45 102,10 125,19 120,50" fill="#f7fbfd"/>
+    <polygon points="120,50 125,19 137,35 153,45 139,64" fill="url(#rightBlue)" opacity=".94"/>
+    <polygon points="97,45 120,50 118,78 99,72" fill="#d7e3eb"/>
+    <polygon points="120,50 139,64 145,76 118,78" fill="url(#rightDark)" opacity=".62"/>
+    <polygon points="139,64 153,45 158,62 145,76" fill="#b8c8d4" opacity=".52"/>
+    <rect width="164" height="96" fill="url(#rightFiber)" opacity=".36"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M22 43 34 63 31 80M48 24 62 47 76 84M67 17 62 47M87 21 97 45 99 72M102 10 97 45M125 19 120 50 118 78M137 35 139 64" stroke="#ffffff" stroke-width=".95" opacity=".72"/>
+    <path d="M34 63 62 47 97 45 120 50 139 64M76 84 99 72 118 78" stroke="#7f95a5" stroke-width=".65" opacity=".48"/>
+    <path d="M28 51C45 42 62 34 82 33M86 60C105 57 121 58 141 65" stroke="#ffffff" stroke-width="2.1" opacity=".34"/>
+  </g>
+</svg>
