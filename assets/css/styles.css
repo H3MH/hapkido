@@ -1980,6 +1980,31 @@ button:focus-visible, textarea:focus-visible{
 }
 .heart-tiny{ color:#a78648;}
 
+/* Botón de ayuda por WhatsApp */
+.wa-help{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin: 16px auto 4px;
+  max-width: 340px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: #25D366;
+  color:#fff;
+  text-decoration:none;
+  font-family:'Quicksand',sans-serif;
+  font-weight:700;
+  font-size: 13.5px;
+  line-height:1.2;
+  text-align:center;
+  box-shadow: 0 8px 18px -8px rgba(37,211,102,0.7);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.wa-help:hover{ transform: translateY(-2px); box-shadow: 0 12px 22px -8px rgba(37,211,102,0.75); }
+.wa-help .wa-ico{ flex:0 0 auto; }
+#whatsappHelpThanks{ margin-top: 22px; }
+
 /* ===============================================================
    MESA DE REGALOS
 =============================================================== */

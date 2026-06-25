@@ -12,6 +12,9 @@ const INVITADOS_JSON_URL = "assets/data/invitados.json";
 const GIFTS_ENABLED = true;                       // Pon false para ocultar toda la sección de regalos
 const REGALOS_JSON_URL = "assets/data/regalos.json";
 
+// Contacto de ayuda por WhatsApp (solo dígitos, con código de país; España = 34).
+const WHATSAPP_HELP = "34647243911";
+
 // Datos del evento
 const EVENT = {
   nombre: "Baby Shower de Eros Salvatore",
@@ -19,5 +22,5 @@ const EVENT = {
   fecha: "12 de agosto de 2026",
   hora: "7:00 PM",
   lugar: "Salón / dirección del evento",
-  mapsUrl: "https://maps.google.com/?q=toledo+españa",
+  mapsUrl: "https://maps.app.goo.gl/EXh5JVdM3ksbhjVu5",
 };

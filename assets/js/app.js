@@ -29,6 +29,49 @@ function getParam(name){
   return u.get(name);
 }
 
+/* ===============================================================
+   TOKEN DEL INVITADO (ofuscación del teléfono en el enlace)
+   El enlace lleva ?i=<token> en vez del teléfono en texto plano.
+   Es un XOR ligero + base64url (no es cifrado: solo disuade el
+   juego casual con invitaciones ajenas).
+=============================================================== */
+const TOKEN_KEY = 7;
+
+function b64urlEncode(str){
+  return btoa(str).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function b64urlDecode(token){
+  let b = String(token).replace(/-/g, "+").replace(/_/g, "/");
+  while(b.length % 4) b += "=";
+  return atob(b);
+}
+function encodeTel(phone){
+  const s = String(phone);
+  let x = "";
+  for(let i = 0; i < s.length; i++) x += String.fromCharCode(s.charCodeAt(i) ^ TOKEN_KEY);
+  return b64urlEncode(x);
+}
+function decodeTel(token){
+  try{
+    const x = b64urlDecode(token);
+    let s = "";
+    for(let i = 0; i < x.length; i++) s += String.fromCharCode(x.charCodeAt(i) ^ TOKEN_KEY);
+    return s.trim();
+  }catch(err){
+    return "";
+  }
+}
+// Lee el teléfono del enlace: primero el token ofuscado (?i=), y como
+// respaldo el ?telefono= en claro (útil para pruebas del anfitrión).
+function getTelefonoFromUrl(){
+  const token = getParam("i") || getParam("inv");
+  if(token){
+    const dec = decodeTel(token);
+    if(dec) return dec;
+  }
+  return (getParam("telefono") || "").trim();
+}
+
 function eventDateText(){
   return [EVENT.diaSemana, EVENT.fecha].filter(Boolean).join(" ");
 }
@@ -65,6 +108,21 @@ function setEventInfo(){
 
 function svgImg(src, width, height){
   return `<img src="${src}" width="${width}" height="${height}" alt="" aria-hidden="true">`;
+}
+
+// Configura los botones de ayuda por WhatsApp a partir de WHATSAPP_HELP (config.js).
+function setupWhatsappHelp(){
+  const num = (typeof WHATSAPP_HELP !== "undefined" && WHATSAPP_HELP)
+    ? String(WHATSAPP_HELP).replace(/\D/g, "")
+    : "";
+  const msg = encodeURIComponent("Hola, escribo por una duda con la invitación del Baby Shower de Eros 💛");
+  const href = num ? `https://wa.me/${num}?text=${msg}` : "";
+  ["#whatsappHelp", "#whatsappHelpThanks"].forEach(sel => {
+    const el = $(sel);
+    if(!el) return;
+    if(href){ el.setAttribute("href", href); }
+    else { el.style.display = "none"; }
+  });
 }
 
 /* ===============================================================
@@ -844,7 +902,7 @@ async function loadGuest(){
   // La invitación espera URLs como:
   // invitacion(3).html?telefono=8090000000
   // Si no llega teléfono, usa el invitado "demo" para poder previsualizar.
-  const tel = (getParam("telefono") || "").trim();
+  const tel = getTelefonoFromUrl();
   let invitado = null;
   let key = tel;
 
@@ -1526,6 +1584,7 @@ async function reserveGift(id){
 =============================================================== */
 window.addEventListener("DOMContentLoaded", async () => {
   setEventInfo();
+  setupWhatsappHelp();
   setupBackgroundParallax();
   buildFloatingDecor();
   await loadGuest();
