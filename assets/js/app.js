@@ -727,6 +727,24 @@ function saveStoredConfirmation(payload){
   }
 }
 
+// Consulta al servidor (Google Sheet) si este invitado ya confirmó. Así el
+// bloqueo de re-confirmación funciona desde cualquier dispositivo, no solo
+// en el navegador donde se confirmó.
+async function fetchServerConfirmation(telefono){
+  if(!APPS_SCRIPT_URL || !telefono || telefono === "demo") return null;
+  try{
+    const url = APPS_SCRIPT_URL + (APPS_SCRIPT_URL.includes("?") ? "&" : "?")
+      + "tipo=confirmacion&telefono=" + encodeURIComponent(telefono) + "&_=" + Date.now();
+    const res = await fetch(url, { cache: "no-store" });
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    return (data && data.confirmacion) ? data.confirmacion : null;
+  }catch(err){
+    console.warn("No se pudo leer la confirmación del servidor.", err);
+    return null;
+  }
+}
+
 function truthyConfirmation(value){
   if(value === true || value === 1) return true;
   if(typeof value !== "string") return false;
@@ -862,7 +880,15 @@ async function loadGuest(){
 
   state.telefono = key;
   state.invitado = invitado;
-  state.confirmedPayload = readStoredConfirmation(key) || buildConfirmationFromGuest(invitado, key);
+
+  // Prioridad: confirmación del servidor (válida en cualquier dispositivo),
+  // luego la local, luego la precargada en el JSON.
+  let serverConfirm = null;
+  try { serverConfirm = await fetchServerConfirmation(key); } catch(_) {}
+  state.confirmedPayload = serverConfirm
+    || readStoredConfirmation(key)
+    || buildConfirmationFromGuest(invitado, key);
+  if(serverConfirm){ saveStoredConfirmation(serverConfirm); }
 
   $("#guestName").textContent = invitado.nombre;
   const maxAllowed = getAllowedCompanions(invitado);
@@ -1507,3 +1533,4 @@ window.addEventListener("DOMContentLoaded", async () => {
   await loadGifts();
   setupEnvelope();
 });
+/* fin */

@@ -41,8 +41,14 @@ function doPost(e) {
 function doGet(e) {
   try {
     var p = (e && e.parameter) ? e.parameter : {};
-    if (String(p.tipo || "").toLowerCase() === "regalos") {
+    var tipo = String(p.tipo || "").toLowerCase();
+    if (tipo === "regalos") {
       return json_({ ok: true, conteos: contarRegalos_() });
+    }
+    if (tipo === "confirmacion") {
+      // Devuelve la confirmación previa de un invitado (o null) para bloquear
+      // la re-confirmación desde cualquier dispositivo.
+      return json_({ ok: true, confirmacion: buscarConfirmacion_(p.telefono) });
     }
     // Por defecto, salud del servicio.
     return json_({ ok: true, servicio: "baby-shower-eros" });
@@ -57,7 +63,7 @@ function guardarRsvp_(p) {
     "Fecha", "Teléfono", "Nombre", "Asistencia",
     "Acompañantes", "Total personas", "Comentario"
   ]);
-  sheet.appendRow([
+  var fila = [
     p.fechaConfirmacion || new Date().toISOString(),
     p.telefono || "",
     p.nombre || "",
@@ -65,8 +71,47 @@ function guardarRsvp_(p) {
     p.acompanantesConfirmados || 0,
     p.totalPersonas || 0,
     p.comentario || ""
-  ]);
+  ];
+
+  // Una sola fila por invitado: si ya existe su teléfono, se actualiza.
+  if (p.telefono) {
+    var data = sheet.getDataRange().getValues();
+    for (var i = 1; i < data.length; i++) {
+      if (String(data[i][1]) === String(p.telefono)) {
+        sheet.getRange(i + 1, 1, 1, fila.length).setValues([fila]);
+        return json_({ ok: true, actualizado: true });
+      }
+    }
+  }
+
+  sheet.appendRow(fila);
   return json_({ ok: true });
+}
+
+/* ============ Buscar confirmación previa de un invitado ============ */
+function buscarConfirmacion_(telefono) {
+  if (!telefono) return null;
+  var sheet = hoja_(SHEET_RSVP, [
+    "Fecha", "Teléfono", "Nombre", "Asistencia",
+    "Acompañantes", "Total personas", "Comentario"
+  ]);
+  var data = sheet.getDataRange().getValues();
+  var found = null;
+  for (var i = 1; i < data.length; i++) {
+    if (String(data[i][1]) === String(telefono)) {
+      found = {
+        fechaConfirmacion: data[i][0],
+        telefono: String(data[i][1]),
+        nombre: data[i][2],
+        asistencia: data[i][3],
+        acompanantesConfirmados: Number(data[i][4]) || 0,
+        totalPersonas: Number(data[i][5]) || 0,
+        comentario: data[i][6] || "",
+        yaConfirmo: "Sí"
+      };
+    }
+  }
+  return found;
 }
 
 /* ============ Reserva de regalo ============ */
