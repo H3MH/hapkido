@@ -14,7 +14,10 @@ const state = {
   confirmedPayload: null,
   attendance: null,        // 'si' | 'no'
   companions: 0,
-  comment: ""
+  comment: "",
+  regalos: [],             // catálogo de regalos
+  giftCounts: {},          // conteo de reservas por idRegalo (desde el Sheet)
+  myGifts: new Set()       // regalos que este invitado ya reservó
 };
 
 const CONFIRMATION_STORAGE_PREFIX = "eros.confirmacion.";
@@ -1073,15 +1076,15 @@ async function onSubmit(){
 
   try{
     if(APPS_SCRIPT_URL){
-      // Apps Script: usar 'no-cors' + form-encoded evita CORS.
-      // La respuesta es opaca; si no hay error de red, se bloquea el RSVP localmente.
+      // Apps Script responde tras una redirección con CORS abierto, así que
+      // se puede leer la respuesta. NO usar mode:"no-cors" (no guarda fiable).
       const body = new URLSearchParams();
       Object.keys(payload).forEach(k => body.append(k, payload[k]));
-      await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body
-      });
+      const res = await fetch(APPS_SCRIPT_URL, { method: "POST", body });
+      try {
+        const data = await res.json();
+        if(data && data.ok === false) throw new Error(data.error || "Error al guardar.");
+      } catch(_) { /* respuesta no-JSON: continuar */ }
     } else {
       // Modo demo
       console.log("[DEMO] Datos que se enviarían a Google Sheets:", payload);
@@ -1174,6 +1177,325 @@ function launchConfetti(){
 }
 
 /* ===============================================================
+   MESA DE REGALOS
+=============================================================== */
+const GIFTS_STORAGE_PREFIX = "eros.regalos.";
+
+// Reservas hechas en ESTA sesión (para reflejar el bloqueo al instante,
+// ya que la respuesta de Apps Script es opaca y el Sheet puede tardar).
+const giftSessionReserved = {};
+
+function giftsEnabled(){
+  return typeof GIFTS_ENABLED === "undefined" ? true : !!GIFTS_ENABLED;
+}
+
+function giftsStorageKey(telefono){
+  return GIFTS_STORAGE_PREFIX + encodeURIComponent(telefono || "demo");
+}
+
+function readMyGiftReservations(telefono){
+  try{
+    const raw = window.localStorage.getItem(giftsStorageKey(telefono));
+    const arr = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(arr) ? arr.map(String) : []);
+  }catch(err){
+    console.warn("No se pudieron leer las reservas de regalos.", err);
+    return new Set();
+  }
+}
+
+function saveMyGiftReservations(telefono, set){
+  try{
+    window.localStorage.setItem(giftsStorageKey(telefono), JSON.stringify([...set]));
+  }catch(err){
+    console.warn("No se pudieron guardar las reservas de regalos.", err);
+  }
+}
+
+function getGiftById(id){
+  return state.regalos.find(g => String(g.id) === String(id)) || null;
+}
+
+// Unidades ya reservadas de un regalo: máximo entre el Sheet y el bloqueo
+// manual del JSON, más lo reservado en esta misma sesión.
+function giftReservedCount(gift){
+  const fromSheet = Number(state.giftCounts[gift.id] || 0);
+  const manual = Number(gift.reservadosManual || 0);
+  const session = Number(giftSessionReserved[gift.id] || 0);
+  const base = Math.max(Number.isFinite(fromSheet) ? fromSheet : 0,
+                        Number.isFinite(manual) ? manual : 0);
+  return base + (Number.isFinite(session) ? session : 0);
+}
+
+function giftAvailable(gift){
+  const total = Number(gift.cantidadTotal || 0);
+  return Math.max(0, total - giftReservedCount(gift));
+}
+
+async function fetchGiftCounts(){
+  // Lee el conteo de reservas por idRegalo desde el Apps Script (doGet).
+  // Si falla (sin red/CORS), se usa solo reservadosManual del JSON.
+  if(!APPS_SCRIPT_URL) return {};
+  try{
+    const url = APPS_SCRIPT_URL + (APPS_SCRIPT_URL.includes("?") ? "&" : "?") + "tipo=regalos&_=" + Date.now();
+    const res = await fetch(url, { cache: "no-store" });
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    const conteos = (data && (data.conteos || data.counts)) || {};
+    const out = {};
+    Object.keys(conteos).forEach(k => { out[String(k)] = Number(conteos[k]) || 0; });
+    return out;
+  }catch(err){
+    console.warn("No se pudo leer el conteo de regalos (se usa el bloqueo manual del JSON).", err);
+    return {};
+  }
+}
+
+async function loadGiftCatalog(){
+  const url = typeof REGALOS_JSON_URL !== "undefined" ? REGALOS_JSON_URL : "assets/data/regalos.json";
+  const res = await fetch(url, { cache: "no-store" });
+  if(!res.ok) throw new Error(`No se pudo cargar ${url}: ${res.status}`);
+  const data = await res.json();
+  const list = Array.isArray(data) ? data : (data.regalos || []);
+  return list.filter(g => g && typeof g === "object" && g.id);
+}
+
+async function loadGifts(){
+  const box = $("#giftsBox");
+  if(!box) return;
+  if(!giftsEnabled()){
+    box.style.display = "none";
+    return;
+  }
+
+  state.myGifts = readMyGiftReservations(state.telefono);
+
+  try{
+    const [catalog, counts] = await Promise.all([loadGiftCatalog(), fetchGiftCounts()]);
+    state.regalos = catalog;
+    state.giftCounts = counts;
+  }catch(err){
+    console.error(err);
+    const grid = $("#giftsGrid");
+    if(grid) grid.innerHTML = `<div class="gifts-loading">No se pudo cargar la mesa de regalos. Inténtalo de nuevo en unos segundos.</div>`;
+    return;
+  }
+
+  renderGifts();
+  setupGiftModal();
+}
+
+function giftStatusInfo(gift){
+  if(state.myGifts && state.myGifts.has(String(gift.id))){
+    return { cls: "badge--mine", text: "Lo reservaste tú ★" };
+  }
+  const avail = giftAvailable(gift);
+  if(avail <= 0){
+    return { cls: "badge--full", text: "Completo ✓" };
+  }
+  const total = Number(gift.cantidadTotal || 1);
+  return {
+    cls: "badge--ok",
+    text: total > 1 ? `${avail} de ${total} disponibles` : "Disponible"
+  };
+}
+
+function renderGifts(){
+  const grid = $("#giftsGrid");
+  if(!grid) return;
+  if(!state.regalos.length){
+    grid.innerHTML = `<div class="gifts-loading">Aún no hay regalos en la lista.</div>`;
+    return;
+  }
+
+  grid.innerHTML = "";
+  state.regalos.forEach(gift => {
+    const status = giftStatusInfo(gift);
+    const icon = gift.icono || "🎁";
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "gift-card" + (status.cls === "badge--full" ? " is-full" : "") +
+                     (status.cls === "badge--mine" ? " is-mine" : "");
+    card.dataset.id = gift.id;
+    card.setAttribute("aria-label", `${gift.nombre} — ver detalle`);
+
+    const media = gift.imagen
+      ? `<span class="gift-emoji">${icon}</span><img src="${escapeHtml(gift.imagen)}" alt="" loading="lazy" onerror="this.remove()">`
+      : `<span class="gift-emoji">${icon}</span>`;
+
+    card.innerHTML = `
+      <span class="gift-card-media">${media}</span>
+      <span class="gift-card-info">
+        <span class="gift-store-badge store-${escapeHtml(String(gift.tienda || "").toLowerCase())}">${escapeHtml(gift.tienda || "")}</span>
+        <span class="gift-card-name">${escapeHtml(gift.nombre || "")}</span>
+        <span class="gift-card-status ${status.cls}">${status.text}</span>
+      </span>`;
+
+    card.addEventListener("click", () => openGiftModal(gift.id));
+    grid.appendChild(card);
+  });
+}
+
+/* ===============================================================
+   MODAL DE PREVISUALIZACIÓN / RESERVA
+=============================================================== */
+let activeGiftId = null;
+
+function setupGiftModal(){
+  if(setupGiftModal.done) return;
+  setupGiftModal.done = true;
+
+  const modal = $("#giftModal");
+  if(!modal) return;
+  $("#giftModalClose").addEventListener("click", closeGiftModal);
+  $("#giftModalBackdrop").addEventListener("click", closeGiftModal);
+  $("#giftModalReserve").addEventListener("click", () => {
+    if(activeGiftId != null) reserveGift(activeGiftId);
+  });
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape" && modal.classList.contains("is-open")) closeGiftModal();
+  });
+}
+
+function openGiftModal(id){
+  const gift = getGiftById(id);
+  const modal = $("#giftModal");
+  if(!gift || !modal) return;
+  activeGiftId = id;
+
+  const icon = gift.icono || "🎁";
+  $("#giftModalMedia").innerHTML = gift.imagen
+    ? `<span class="gift-emoji">${icon}</span><img src="${escapeHtml(gift.imagen)}" alt="" onerror="this.remove()">`
+    : `<span class="gift-emoji gift-emoji-lg">${icon}</span>`;
+
+  const store = $("#giftModalStore");
+  store.textContent = gift.tienda || "";
+  store.className = "gift-store-badge store-" + String(gift.tienda || "").toLowerCase();
+
+  $("#giftModalName").textContent = gift.nombre || "";
+  $("#giftModalDesc").textContent = gift.descripcion || "";
+
+  const link = $("#giftModalLink");
+  link.href = gift.url || "#";
+  link.textContent = "Ver en " + (gift.tienda || "la tienda");
+
+  $("#giftModalMsg").textContent = "";
+  $("#giftModalMsg").className = "gift-modal-msg";
+
+  updateGiftModalStatus(gift);
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function updateGiftModalStatus(gift){
+  const status = giftStatusInfo(gift);
+  const statusEl = $("#giftModalStatus");
+  statusEl.className = "gift-modal-status gift-card-status " + status.cls;
+  statusEl.textContent = status.text;
+
+  const btn = $("#giftModalReserve");
+  const mine = state.myGifts && state.myGifts.has(String(gift.id));
+  const avail = giftAvailable(gift);
+
+  if(!state.invitado){
+    btn.disabled = true;
+    btn.textContent = "Abre tu invitación para reservar";
+  } else if(mine){
+    btn.disabled = true;
+    btn.textContent = "Ya lo reservaste ★";
+  } else if(avail <= 0){
+    btn.disabled = true;
+    btn.textContent = "Regalo completo";
+  } else {
+    btn.disabled = false;
+    btn.textContent = "Reservar este regalo";
+  }
+}
+
+function closeGiftModal(){
+  const modal = $("#giftModal");
+  if(!modal) return;
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  activeGiftId = null;
+}
+
+async function reserveGift(id){
+  const gift = getGiftById(id);
+  const msg = $("#giftModalMsg");
+  const btn = $("#giftModalReserve");
+  if(!gift) return;
+
+  if(!state.invitado){
+    msg.className = "gift-modal-msg error";
+    msg.textContent = "Abre la invitación con tu enlace personal para poder reservar.";
+    return;
+  }
+  if(state.myGifts.has(String(id))){
+    msg.className = "gift-modal-msg ok";
+    msg.textContent = "Ya tienes este regalo reservado.";
+    return;
+  }
+  if(giftAvailable(gift) <= 0){
+    msg.className = "gift-modal-msg error";
+    msg.textContent = "Justo se acaba de completar. Elige otro detalle, por favor.";
+    updateGiftModalStatus(gift);
+    renderGifts();
+    return;
+  }
+
+  btn.disabled = true;
+  msg.className = "gift-modal-msg";
+  msg.textContent = "Reservando…";
+
+  const payload = {
+    tipo: "regalo",
+    fecha: new Date().toISOString(),
+    idRegalo: gift.id,
+    nombreRegalo: gift.nombre,
+    telefono: state.telefono,
+    nombreInvitado: state.invitado.nombre
+  };
+
+  try{
+    if(APPS_SCRIPT_URL){
+      const body = new URLSearchParams();
+      Object.keys(payload).forEach(k => body.append(k, payload[k]));
+      // Apps Script responde tras una redirección con CORS abierto: podemos leer
+      // la respuesta y confirmar que se guardó. NO usar mode:"no-cors", que no
+      // escribe de forma fiable.
+      const res = await fetch(APPS_SCRIPT_URL, { method: "POST", body });
+      let data = null;
+      try { data = await res.json(); } catch(_) {}
+      if(data && data.ok === false){
+        throw new Error(data.error || "No se pudo registrar la reserva.");
+      }
+    } else {
+      console.log("[DEMO] Reserva de regalo:", payload);
+      await new Promise(r => setTimeout(r, 500));
+    }
+
+    giftSessionReserved[gift.id] = (giftSessionReserved[gift.id] || 0) + 1;
+    state.myGifts.add(String(gift.id));
+    saveMyGiftReservations(state.telefono, state.myGifts);
+
+    // Reconciliar con el servidor para reflejar también lo que reservaron otros.
+    try { state.giftCounts = await fetchGiftCounts(); } catch(_) {}
+
+    msg.className = "gift-modal-msg ok";
+    msg.textContent = "¡Reservado! Gracias por tu detalle con Eros 💛";
+    updateGiftModalStatus(gift);
+    renderGifts();
+  }catch(err){
+    console.error(err);
+    msg.className = "gift-modal-msg error";
+    msg.textContent = "No se pudo reservar. Inténtalo de nuevo en unos segundos.";
+    btn.disabled = false;
+  }
+}
+
+/* ===============================================================
    INIT
 =============================================================== */
 window.addEventListener("DOMContentLoaded", async () => {
@@ -1182,5 +1504,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   buildFloatingDecor();
   await loadGuest();
   setupRsvp();
+  await loadGifts();
   setupEnvelope();
 });

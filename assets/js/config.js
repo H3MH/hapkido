@@ -5,8 +5,12 @@
   Los invitados se editan en assets/data/invitados.json.
 */
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyNLGA3IdU9_0Omyi7P81iw0RPqKYZNvuBHodeKRVSHwXi17ZK75w3flpEpVN1vcfKqgA/exec"; // Ej: "https://script.google.com/macros/s/AKfycb.../exec"
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqVDAzHfm9HI488VBjN8PlZCMKMauKoaCfaZB0FwssUGVEfdm3idsdtKPlFe6QvgK3Uw/exec"; // Ej: "https://script.google.com/macros/s/AKfycb.../exec"
 const INVITADOS_JSON_URL = "assets/data/invitados.json";
+
+// Mesa de regalos
+const GIFTS_ENABLED = true;                       // Pon false para ocultar toda la sección de regalos
+const REGALOS_JSON_URL = "assets/data/regalos.json";
 
 // Datos del evento
 const EVENT = {

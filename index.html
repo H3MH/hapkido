@@ -301,12 +301,52 @@
         <div class="form-msg" id="formMsg"></div>
       </div>
 
+      <!-- ============ MESA DE REGALOS ============ -->
+      <div class="gifts" id="giftsBox">
+        <div class="book-divider">
+          <span class="line"></span>
+          <img class="divider-icon" src="assets/svg/icons/divider-star.svg" alt="" aria-hidden="true" />
+          <span class="line"></span>
+        </div>
+        <h3 class="gifts-title">Mesa de regalos</h3>
+        <p class="gifts-intro">
+          Si quieres tener un detalle con Eros, aquí tienes algunas ideas. Reserva
+          el tuyo para que no se repita: al reservarlo quedará marcado para los demás.
+        </p>
+
+        <div class="gifts-grid" id="giftsGrid">
+          <div class="gifts-loading" id="giftsLoading">Cargando la mesa de regalos…</div>
+        </div>
+      </div>
+
       <div class="book-footer-msg">
         ~ Te esperamos con mucho cariño <span class="heart-tiny">★</span> ~
       </div>
     </div>
   </div>
 </section>
+
+<!-- ============ MODAL DE PREVISUALIZACIÓN DE REGALO ============ -->
+<div class="gift-modal" id="giftModal" aria-hidden="true">
+  <div class="gift-modal-backdrop" id="giftModalBackdrop"></div>
+  <div class="gift-modal-card" role="dialog" aria-modal="true" aria-labelledby="giftModalName">
+    <button type="button" class="gift-modal-close" id="giftModalClose" aria-label="Cerrar">
+      <span class="icon icon-x" aria-hidden="true"></span>
+    </button>
+    <div class="gift-modal-media" id="giftModalMedia"></div>
+    <div class="gift-modal-body">
+      <span class="gift-store-badge" id="giftModalStore"></span>
+      <h4 id="giftModalName">—</h4>
+      <p id="giftModalDesc"></p>
+      <div class="gift-modal-status" id="giftModalStatus"></div>
+      <div class="gift-modal-actions">
+        <a id="giftModalLink" href="#" target="_blank" rel="noopener" class="gift-link-btn">Ver en la tienda</a>
+        <button type="button" class="gift-reserve-btn" id="giftModalReserve">Reservar este regalo</button>
+      </div>
+      <div class="gift-modal-msg" id="giftModalMsg"></div>
+    </div>
+  </div>
+</div>
 
 <!-- ============ ESCENA 3: AGRADECIMIENTO ============ -->
 <section class="stage" id="scene-thanks">
