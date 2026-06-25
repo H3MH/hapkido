@@ -9,6 +9,7 @@ Invitación web de confirmación de asistencia (RSVP) y mesa de regalos para el 
 - [Configuración del evento](#configuración-del-evento)
 - [Invitados](#invitados)
 - [Mesa de regalos](#mesa-de-regalos)
+- [Preview en WhatsApp](#preview-en-whatsapp)
 - [Backend (Google Apps Script)](#backend-google-apps-script)
 - [Desarrollo local](#desarrollo-local)
 - [Despliegue](#despliegue)
@@ -27,6 +28,7 @@ assets/
     invitados.json             Lista de invitados (editable a mano)
     regalos.json               Catálogo de regalos (editable a mano)
   svg/                         Ilustraciones papercraft de las escenas
+  social/                      Imagen JPG usada por WhatsApp/Open Graph
 google-apps-script/
   Code.gs                      Backend: guarda RSVP y reservas, devuelve conteos
 ```
@@ -35,13 +37,13 @@ google-apps-script/
 
 La invitación tiene tres escenas: un **sobre** que se abre al tocar el sello, un **libro pop-up** con el saludo personalizado, la información del evento, el formulario de RSVP y la mesa de regalos, y una escena final de **agradecimiento**.
 
-El invitado se identifica por el parámetro `telefono` en la URL:
+El invitado se identifica por un token ofuscado en el parámetro `i` de la URL:
 
 ```
-https://tu-sitio/index.html?telefono=8090000000
+https://witty-stone-03a73a110.5.azurestaticapps.net/index.html?pv=20260625&i=NDU1MzQ2NTAyMw
 ```
 
-`app.js` busca ese número en `invitados.json`. Si lo encuentra, muestra el nombre y el máximo de acompañantes; si no, bloquea el formulario. Sin parámetro, entra en modo **demo** (invitado de ejemplo) para previsualizar.
+`app.js` decodifica ese token y busca el teléfono resultante en `invitados.json`. Si lo encuentra, muestra el nombre y el máximo de acompañantes; si no, bloquea el formulario. El parámetro `telefono` en claro se mantiene solo como respaldo para pruebas. Sin parámetro, entra en modo **demo** (invitado de ejemplo) para previsualizar.
 
 Como es un sitio estático, el navegador **no puede escribir** en los archivos JSON. Por eso las confirmaciones y las reservas se envían a un **Google Apps Script** que las guarda en una hoja de cálculo, y la confirmación local se recuerda en `localStorage` del invitado.
 
@@ -131,6 +133,28 @@ El **Google Sheet es la fuente de verdad** del bloqueo compartido entre todos lo
 ### Añadir un regalo nuevo
 
 Copia un bloque del array `regalos`, cambia `id` (único), `nombre`, `descripcion`, `url`, `imagen` y `cantidadTotal`. Para regalos de IKEA, la imagen oficial es la etiqueta `og:image` de la página del producto.
+
+## Preview en WhatsApp
+
+WhatsApp no espera a que se ejecute JavaScript, así que el preview sale de los metadatos estáticos del `<head>` de `index.html`. El sitio incluye etiquetas `og:*`, `twitter:*`, descripción, canonical e imagen social absoluta apuntando al dominio de Azure:
+
+```
+https://witty-stone-03a73a110.5.azurestaticapps.net/assets/social/whatsapp-preview-eros-2026.jpg?v=20260625
+```
+
+La imagen se genera en `assets/social/whatsapp-preview-eros-2026.jpg` con tamaño 1200×630, que es el formato recomendado para tarjetas grandes. Para regenerarla:
+
+```powershell
+.\scripts\generate_social_preview.ps1
+```
+
+Si WhatsApp ya cacheó un enlace antiguo sin imagen, vuelve a generar los links con un parámetro de versión en la URL base, por ejemplo:
+
+```powershell
+.\scripts\generate_links_obfuscated.ps1 -BaseUrl "https://witty-stone-03a73a110.5.azurestaticapps.net/index.html?pv=20260625"
+```
+
+La app ignora `pv`; solo sirve para que WhatsApp trate el enlace como nuevo y vuelva a leer los metadatos.
 
 ## Backend (Google Apps Script)
 
