@@ -5,7 +5,7 @@
   Los invitados se editan en assets/data/invitados.json.
 */
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqVDAzHfm9HI488VBjN8PlZCMKMauKoaCfaZB0FwssUGVEfdm3idsdtKPlFe6QvgK3Uw/exec"; // Ej: "https://script.google.com/macros/s/AKfycb.../exec"
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXgnQeEMGJuRMHz6KmO6qwNIMYn-wzPpyFetHlJQIQ4psjm52yKk8B0zBkBaodHWTQRg/exec"; // Ej: "https://script.google.com/macros/s/AKfycb.../exec"
 const INVITADOS_JSON_URL = "assets/data/invitados.json";
 
 // Mesa de regalos
