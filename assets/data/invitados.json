@@ -1,7 +1,7 @@
 {
   "3224312754": {
     "nombre": "Aby",
-    "acompanantesPermitidos": 1,
+    "acompanantesPermitidos": 0,
     "yaConfirmo": false,
     "confirmacion": null
   },
@@ -313,6 +313,36 @@
   },
   "647243911": {
     "nombre": "Solangy Rojas",
+    "acompanantesPermitidos": 3,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "622816980": {
+    "nombre": "Naomi",
+    "acompanantesPermitidos": 0,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "647485600": {
+    "nombre": "Javier y Lorena",
+    "acompanantesPermitidos": 0,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "634085421": {
+    "nombre": "Kevin y Jetsa",
+    "acompanantesPermitidos": 0,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "662660180": {
+    "nombre": "Familia Ángulo Bondarenko",
+    "acompanantesPermitidos": 5,
+    "yaConfirmo": false,
+    "confirmacion": null
+  },
+  "640030947": {
+    "nombre": "Francis, Kendy y Anita",
     "acompanantesPermitidos": 3,
     "yaConfirmo": false,
     "confirmacion": null
